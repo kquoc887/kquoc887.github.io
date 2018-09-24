@@ -1,0 +1,129 @@
+/*Start Reset CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*End Reset CSS*/
+.container {
+	width: 500px;
+	border: 1px solid #F6F6F6;
+	margin: auto;
+	margin-top: 5px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+
+}
+
+/*Start CSS profile*/
+.profile__title {
+	height: 25px;
+	background-image: url("../images/title_background.gif");
+	font-weight: bold;
+	line-height: 25px;
+}
+.profile_info__avatar {
+	width: 100px;
+	height: 90px;
+	float: left;
+}
+
+.profile__list {
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
+/*End CSS profile*/
+
+/*Start CSS container__facts*/
+ .container__facts {
+ 	clear: both;
+ }
+
+ .facts__title {
+ 	font-weight: bold;
+ }
+
+ .facts__list {
+ 	list-style-image: url("../images/star.gif");
+ 	list-style-position: inside;
+ 	margin-left: 45px;
+ 	margin-top: 15px;
+ }
+ /*End CSS container__facts*/
+
+/*Start CSS comment*/
+.container__comment {
+	margin-top: 40px;
+}
+
+ .comment__1 {
+ 	background-color: #ECECEC
+ }
+
+ .comment__2 {
+ 	margin-left: 15px;
+ }
+
+ .comment__2__link {
+ 	text-decoration: none;
+ }
+ /*End CSS comment*/
+
+ /*Start CSS your_comment*/
+ .container__your_comment {
+ 	margin-top: 20px;
+ }
+
+ .container__your_comment table {
+	border-spacing: 2px;
+	border-collapse: separate;
+}
+.container__your_comment table th {
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+ .container__your_comment table td{
+ 	vertical-align: middle;
+ 	font-size: 14px;
+ }
+ /*End CSS your_comment*/
+
