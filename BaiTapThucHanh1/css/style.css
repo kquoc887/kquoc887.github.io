@@ -1,0 +1,216 @@
+/*Start Reset CSS*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*End Reset CSS*/
+.container {
+	width: 1262px;
+	margin: auto;
+	font-family: Verdara, Arial, Helvetica, sans-serif;
+}
+.container__header {
+	background-color: #2D2F35;
+}
+.title {
+	color: #FFFF00;
+	font-size: 32px;
+}
+
+.content {
+	color: #cccccc;
+	font-size: 15px;
+	margin-top: 18px;
+	margin-bottom: 13px;
+}
+/*Start CSS intro*/
+.container__intro {
+	background-image: url("../images/bg_home_intro.gif");
+	height: 302px;
+	position: relative;
+	border-top: 1px solid #474a51;
+}
+
+.intro__content1 {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	margin-left: 75px;
+	width: 400px;
+	height: 235px;
+}
+
+.container__intro img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	background-size: cover;
+	padding-right: 153px;
+}
+/*End CSS intro*/
+
+/*Start CSS menu*/
+.container__menu {
+	background-color: #2D2F35;
+	height: 145px;
+	border-top: 1px solid #474a51;
+}
+
+.container__menu__list{
+	margin-left: 180px;
+	padding-top: 25px;
+}
+
+.list__item {
+	position: relative;
+	width: 220px;
+	height: 100px;
+	float: left;
+	margin-right: 15px;
+}
+
+.list__item__img1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.list__item__img2 {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+/*End CSS menu*/
+
+/*Start CSS contact*/
+.container__contact {
+	height: 380px;
+	background-color: #2D2F35;
+	border-top: 1px solid #474a51;
+}
+
+.container__contact__content-trai {
+	position: relative;  
+	width: 406px;
+	height: 336px;
+	margin-left: 130px;
+	float: left;
+}
+
+.container__contact__content__texttrai {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.container__contact__content__imgtrai {
+	position: absolute;
+	right: 0;
+	bottom: -25px;
+	z-index: 1;
+}
+
+.container__contact__content__texttrai .title {
+	font-size: 26px;
+}
+
+.container__contact__content__texttrai .content {
+	color: #ffffff;
+	margin-top: 0px;
+	font-size: 15px;
+	text-align: justify;
+}
+
+.container__contact__content-phai {
+	position: relative;
+	width: 400px;
+	height: 370px;
+	margin-left: 195px;
+	float: left;
+}
+
+.container__contact__content__textphai {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.container__contact__content__imgphai {
+	position: absolute;
+	top: 0;
+	left: : 0;
+	z-index: 1;
+}
+
+.container__contact__content__textphai .title {
+	font-size: 24px;
+}
+
+.container__contact__content__textphai .content {
+	color: #ffffff;
+	margin-top: 45px;
+	font-size: 14px;
+	text-align: justify;
+}
+/*End CSS contact*/
+
+/*Start CSS footer*/
+.container__footer {
+	background: #24262a;
+	/*background-repeat: repeat-x;*/
+	height: 122px;
+	border-top: 1px solid #474a51;
+	text-align: center;
+	/*clear: both;*/
+	color: #ffffff;
+}
+/*End CSS footer*/
