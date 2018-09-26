@@ -1,0 +1,191 @@
+/*Start Reset CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*End Reset CSS*/
+
+.container {
+	width: 1263px;
+	margin: auto;
+	background-color: #121212;
+	color: #595959;
+	font-size: 13px;
+	padding-bottom: 70px;
+}
+
+/*Start CSS header*/
+.header {
+		background-image: url("../images/fill_header.jpg");
+		height: 253px;
+		position: relative;
+}
+
+.header__container1 {
+	position: absolute;
+	width: 330px;
+	height: 100px;
+	top:65px;
+	left: 50px;
+	background-image: url("../images/logomuc.png");
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.header__container1__title {
+	position: absolute;
+	top: 40px;
+	left: 120px;
+	width: 315px;
+	background-image: url("../images/logomuc.png");
+	background-repeat: no-repeat;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	padding-left: 115px;
+	padding-top: 13px;
+	color: black;
+	font-size: 40px;
+	z-index: 1;
+}
+
+.header__container1__title img{
+	width: 5px;
+	height: 5px;
+	margin-right: 15px;
+	margin-left: 10px;
+}
+
+.header__menu {
+	position: absolute;
+	z-index: 1;
+	width: 715px;
+	bottom: -29px;
+	left: 150px;
+	color: white;
+}
+
+.header__menu li {
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+}
+
+.header__menu li img {
+	width: 138px;
+	height: 48px;
+}
+/*End CSS header*/
+
+/*Start CSS content*/
+.content {
+	margin:110px 0 0 45px;
+}
+.content__left {
+	width: 237px;
+	background-color: #1f1f1f;
+	padding-top: 45px;
+	margin-right: 35px;
+	float: left;
+}
+
+.left__info1 , .left__info2 {
+	margin:  45px 30px 0px;
+}
+.left__info1 {
+	border-top: 1px solid #7e7e7e;
+	padding-top: 20px;
+}
+.left__info2 {
+	border-top: 1px solid #2c2c2c;
+	padding-top: 30px;
+	padding-bottom: 38px;
+}
+.content__left .left__info2 ul {
+	list-style: url("../images/arr.gif");
+	list-style-position: inside; 
+
+}
+
+.left__info2 li a{
+	color:#707070;
+}
+
+.content__right{
+	float: left;
+	width: 402px;
+}
+
+.right__info {
+	margin-top: 45px;
+}
+
+.right__info__pic2 {
+	margin:10px 0 0 12px;
+}
+.right__info a {
+	text-decoration: none;
+	color:white;
+}
+
+.content__right p {
+	margin-left: 12px;
+}
+
+.right__info p:last-child {
+	border-top: 1px dotted;
+	padding-top: 10px;
+}
+
+/*End CSS content*/
+
+.clear {
+	clear: both;
+	float: none;
+}
+
+.footer {
+	border-top: 1px dotted;
+	width: 700px;
+	margin: 70px 0 0 45px;
+	padding-top: 25px;	
+}
