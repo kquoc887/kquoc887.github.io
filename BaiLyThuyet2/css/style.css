@@ -50,7 +50,7 @@ table {
 /*End Reset CSS*/
 
 body {
-	font-size: 0.6875em;
+	font-size: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 	color: #595959;
 }
@@ -76,8 +76,8 @@ a {
  	margin-right: 25px;
  }
 
-.container__left p:first-child {
-	margin-top: 25px;
+.title {
+	margin-top: 35px;
 }
 
 .article1 {
@@ -85,10 +85,11 @@ a {
 }
 
  .article1__img1 {
- 	width: 126px;
- 	height: 90px;
+ 	width: 130px;
+ 	height: 93px;
  	float: left;
  	margin-right: 22px;
+ 	margin-bottom: 40px;
  }
 
 .article1 p:last-child {
