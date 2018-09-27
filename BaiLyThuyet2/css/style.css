@@ -60,101 +60,114 @@ a {
  	color: white;
 }
 
+hr {
+	margin-top: 15px;
+	border: none;
+	border-top: 1px dotted #3f3f41;
+}
+
 .container {
 	width: 1031px;
 	margin:auto;
 	background-color: #121214;
-	/*height: 583px;*/
-	/*display: flex;*/
+}
+
+.moreinfo  {
+	margin-top:15px;
+	display: flex;
+}
+
+.moreinfo img {
+	margin-right: 7px;
+
 }
  
  /*Strat CSS container__left*/
  .container__left {
  	margin-left: 48px;
+ 	margin-right: 25px;
  	width: 407px;
  	float: left;
- 	margin-right: 25px;
  }
 
-.title {
+.left__title {
 	margin-top: 35px;
 }
 
-.article1 {
+.left__article1 {
 	margin-top: 35px;
 }
 
- .article1__img1 {
+ .left__article1__img1 {
+ 	margin-right: 25px;
+ 	margin-bottom: 35px;
+ 	margin-left: 4px;
  	width: 130px;
  	height: 93px;
  	float: left;
- 	margin-right: 22px;
- 	margin-bottom: 40px;
  }
 
-.article1 p:last-child {
-	border-top: 1px dotted;
-	margin-top: 15px;
-	padding-top: 10px;
+.left__article1__comment {
+	margin-left: 15px;
 }
 
- .article1__info {
+ .left__article1__info {
  	margin-top: 20px;
  }
 
-.article2 {
+.left__article2 {
 	margin-top: 85px;
 	margin-bottom: 30px;
 }
 
-.article2 p{
-	margin-bottom: 20px;
+.left__article2__list {
+	display: flex;
+	line-height: 2;
+	margin-top: 20px;
+	border-bottom: 1px dotted;
+	width: 390px;
+	padding-bottom: 20px;
 }
 
-.article2 #text_2{
-	clear: both;
-	border-top: 1px dotted;
-	margin-top: 20px;
-	padding-top: 10px;
-}
-.article2__list1 {
-	float: left;
-	margin-right: 10px;
-}
-.article2 div ul {
-	list-style: url("../images/arr.gif");
+.left__article2__list ul {
 	margin-right: 12px;
+	list-style: url("../images/arr.gif");
 	list-style-position: inside;
 }
 
-.article2 li a {
-		color: #595959;
-		text-decoration: underline;
+.left__article2__list li a {
+	color: #595959;
+	text-decoration: underline;
 }
 /*End CSS container__left*/
 
 /*Start CSS container__right*/
 .container__right {
-	background-color: #232326;
+	margin-top: 10px;
 	width: 238px;
 	float: left;
-	margin-top: 10px;
+	background-color: #232326;
 }
 
-.wrapper {
+.right__wrapper {
+	margin: 70px 30px 40px;
 	width: 190px;
 	height: 280px;
-	margin: 70px 30px 0px;
-	border-top: 1px	 dotted; 
+	border-top: 1px	 dotted;
 }
 
-.wraper__img {
+.right__wraper__img {
 	margin-top: 30px;
 	margin-bottom: 20px;
 }
 
-.wrapper__info--phai {
-	margin-bottom: 40px;
+.right__wrapper__info {
+	margin-bottom: 50px;
+	margin-top: 10px;
+}
+
+.right__wrapper__info p:nth-child(n+2){
+	color: #767884;
 }
 
 /*End CSS container__right*/

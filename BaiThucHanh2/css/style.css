@@ -146,6 +146,10 @@ table {
 
 }
 
+.left__info2 li {
+	margin-bottom: 12px;
+}
+
 .left__info2 li a{
 	color:#707070;
 }
