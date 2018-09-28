@@ -74,7 +74,7 @@ table {
 /*End CSS profile*/
 
 /*Start CSS container__facts*/
- .container__facts {
+ .facts {
  	clear: both;
  }
 
@@ -95,7 +95,7 @@ table {
  /*End CSS container__facts*/
 
 /*Start CSS comment*/
-.container__comment {
+.comment {
 	margin-top: 65px;
 }
 
@@ -120,18 +120,18 @@ table {
  /*End CSS comment*/
 
  /*Start CSS your_comment*/
- .container__yourcomment {
+ .yourcomment {
  	margin-top: 30px;
  }
 
- .container__yourcomment table {
+ .yourcomment table {
 	border-spacing: 2px;
 	border-collapse: separate;
 }
-.container__yourcomment table th {
+.yourcomment table th {
 	font-weight: bold;
 }
- .container__yourcomment table td{
+ .yourcomment table td{
  	vertical-align: middle;
  }
  /*End CSS your_comment*/
