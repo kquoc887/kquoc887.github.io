@@ -44,27 +44,34 @@ table {
 }
 /*End Reset CSS*/
 
-.container	{
-	background-color: #e7f2fa;
-	width: 320px;
+/*Start CSS wrapper*/
+.wrapper  {
+	margin: 10px auto;
+	padding-bottom: 15px;
+	width: 317px;
+	background-color: #e6f3fb;
 	font-size: 12px;
 	line-height: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/*End CSS wrapper*/
+
+.container {
+	width: 297px;
 	margin: auto;
-	padding-bottom: 15px;
 }
 
 a {
 	color: #0461a9;
 	text-decoration: none;
 }
-.container__block1, .container__block2, .container__block3, .container__block4 {
-	width: 305px;
-	margin:auto;
-}
 
-.container__block1__info, .container__block2__info, .container__block3__info , .container__block4__info{
-	border-top: 3.1px solid #f3a417;
+.blogroll__info, 
+.horoscopes__info, 
+.container__block3__info, 
+.container__block4__info {
 	padding-top: 5px;
+	border-top: 4px solid #f3a417;
 	background-color: #ffffff;
 }
 
@@ -73,12 +80,13 @@ a {
 	font-size: 12px;
 }
 
-.container__block1__info img {
-	float: left;
+ /*Start CSS blogroll*/
+.blogroll__info img {
 	margin:0px 8px;
+	float: left;
 }
 
- .block1__info__title {
+ .blogroll__info__title {
  	margin-top: 5px;
  	color: #0f5d85;
  	font-weight: bold;
@@ -89,66 +97,97 @@ a {
  	float: none;
 }
 
- .block1__info__list  li {
- 	background-color: #fbf0c0;
+ .blogroll__info__list  li {
  	margin-bottom: 1px;
- 	height: 20px;
  	padding-top: 5px;
  	padding-left: 10px;
+ 	height: 20px;
+ 	background-color: #fbf0c0;
+
  }
+ /*End CSS blogroll*/
 
- .block1__info__list li a {
- 	text-decoration: underline;
- }
+/*Start CSS Horoscopes*/ 
+.container__horoscopes {
+	margin-top: 5px;
+}
 
-.container__block2__info {
-	font-size: 11px;
-} 
-
- .container__block2__info img {
+.horoscopes__info {
+	overflow: hidden;
+}
+ .horoscopes__info__img{
+ 	margin-left: 15px;
+ 	margin-top: 20px;
+ 	width: 111px;
+ 	height: 141px;
  	float: left;
  }
 
- .block2__info__title{
- 	margin-top: 25px;
+.horoscopes__info__title {
+	margin-top: 25px;
+	font-size: 11px;
  	font-weight: bold;
- }
+}
 
- .block2__info_date {
+ .horoscopes__info__date {
  	color: #c5c5c5;
  }
 
-.container__block2__footer {
-	width: 305px;
-	height: 60px;
-	background-color: #f5f4eb;
-	display: flex;
-	justify-content: space-between;
+.horoscopes__info p:last-child {
+	margin-top: 12px;
+	margin-right: 20px;
+	font-size: 9px;
+}
+.horoscopes__footer {
+	background-image: url("../images/img3.png");
+	background-repeat: no-repeat;
+	width: 296px;
+    height: 48px;
 }
 
-.block2__footer__text {
-	margin:18px 0 0 20px;
+.horoscopes__footer__text {
+	padding:13px 22px;
 }
+/*End CSS horoscopes*/
 
+/*Start CSS block3*/
 .container__block3 {
 	margin-top: 20px;
 }
 
 .container__block3__info img {
+	max-width: 115px;
+	max-height: 113px;
 	float: right;
-	height: 136px;
 }
 .block3__info__text {
-	margin:34px 0 0 27px;
+	/* margin:34px 0 0 27px; */
+	margin-left: 22px;
+	margin-top: 24px;
+	width: 133px;
+	height: 76px;
 }
 
-.container__block4 {
+.block3__info__text p {
+	margin-bottom: 10px;
+}
+/*End CSS block3*/
+
+/*Start CSS competions*/
+.container__competions {
 	margin-top: 5px;
-	border-top: 1px solid #d9dee3;
+	border-top: 1px solid #595959;
 }
 
-.container__block4 ul {
-	border: 1px solid #d9dee3;
-	background-color: #ffffff;
+.compettions__list {
 	padding-left: 10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border: 1px solid #595959;
+	background-color: #fff;
 }
+
+.compettions__list li a {
+	color: #4d5d73;
+}
+/*Start CSS compettion*/

@@ -45,13 +45,13 @@ table {
 /*End Reset CSS*/
 
 .wrapper {
-	width: 1263px;
+	padding-bottom: 70px;
 	margin: auto;
+	width: 1263px;
 	background-color: #121212;
 	color: #595959;
 	font-size: 11px;
 	line-height: 1.63;
-	padding-bottom: 70px;
 	font-family: Georgia,  serif;
 }
 
@@ -97,10 +97,10 @@ table {
 }
 
 .left__info1 {
-	border-top: 1px solid #7e7e7e;
 	padding-top: 20px;
 	margin: 0px 22px;
 	width: 183px;
+	border-top: 1px solid #7e7e7e;
 }
 
 .left__info1 p {
@@ -108,10 +108,10 @@ table {
 }
 
 .left__info2 {
-	border-top: 1px solid #2c2c2c;
+	margin: 65px 22px 0px;
 	padding-top: 30px;
 	padding-bottom: 38px;
-	margin: 65px 22px 0px;
+	border-top: 1px solid #2c2c2c;
 }
 
 .left__info2  {
@@ -153,9 +153,9 @@ table {
 }
 
 .right__info p:last-child {
-	border-top: 1px dotted;
-	padding-top: 10px;
 	margin-top: 15px;
+	padding-top: 10px;
+	border-top: 1px dotted;
 }
 
 /*End CSS content*/
@@ -166,10 +166,10 @@ table {
 }
 /*Start CSS footer*/
 .footer {
-	border-top: 1px dotted;
-	width: 700px;
 	margin: 70px 0 0 65px;
 	padding-top: 25px;
 	padding-left: 8px;
+	width: 700px;
+	border-top: 1px dotted;
 }
 /*End CSS footer*/
