@@ -56,7 +56,7 @@ table {
 }
 
 /*Start CSS header*/
-.wrapper__header {
+.header {
 		background-image: url("../images/logo_01.png");
 		height: 253px;
 		position: relative;
@@ -85,7 +85,7 @@ table {
 /*End CSS header*/
 
 /*Start CSS content__left*/
-.wrapper__content {
+.content {
 	margin: 110px 0 0 70px;
 }
 .content__left {
@@ -96,36 +96,34 @@ table {
 	float: left;
 }
 
-.left__info1 {
+.content__left__info1 {
 	padding-top: 20px;
 	margin: 0px 22px;
 	width: 183px;
 	border-top: 1px solid #7e7e7e;
 }
 
-.left__info1 p {
+.content__left__info1 p {
 	margin-left: 12px;
 }
 
-.left__info2 {
+.content__left__info2 {
 	margin: 65px 22px 0px;
 	padding-top: 30px;
 	padding-bottom: 38px;
 	border-top: 1px solid #2c2c2c;
-}
-
-.left__info2  {
 	list-style: url("../images/arr.gif");
 	list-style-position: inside; 
-
 }
 
-.left__info2 li {
+
+
+.content__left__info2 li {
 	margin-bottom: 12px;
 	margin-left: 23px;
 }
 
-.left__info2 li a{
+.content__left__info2 li a{
 	color:#707070;
 }
 /*End CSS content__left*/
@@ -136,14 +134,14 @@ table {
 	width: 402px;
 }
 
-.right__info {
+.content__right__info {
 	margin-top: 42px;
 }
 
 .right__info_pic2 {
 	margin: 20px 0 12px 12px;
 }
-.right__info a {
+.content__right__info a {
 	text-decoration: none;
 	color:white;
 }
@@ -152,7 +150,7 @@ table {
 	margin-left: 12px;
 }
 
-.right__info p:last-child {
+.content__right__info p:last-child {
 	margin-top: 15px;
 	padding-top: 10px;
 	border-top: 1px dotted;

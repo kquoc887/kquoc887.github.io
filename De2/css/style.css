@@ -83,7 +83,7 @@ hr {
 }
  
  /*Strat CSS container__left*/
- .container__left {
+ .left {
  	margin-left: 48px;
  	margin-right: 25px;
  	width: 407px;
@@ -142,7 +142,7 @@ hr {
 /*End CSS container__left*/
 
 /*Start CSS container__right*/
-.container__right {
+.right {
 	margin-top: 10px;
 	width: 238px;
 	float: left;
