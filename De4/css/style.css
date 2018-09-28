@@ -68,8 +68,7 @@ a {
 
 .blogroll__info, 
 .horoscopes__info, 
-.container__block3__info, 
-.container__block4__info {
+.block3__info {
 	padding-top: 5px;
 	border-top: 4px solid #f3a417;
 	background-color: #ffffff;
@@ -108,7 +107,7 @@ a {
  /*End CSS blogroll*/
 
 /*Start CSS Horoscopes*/ 
-.container__horoscopes {
+.horoscopes {
 	margin-top: 5px;
 }
 
@@ -151,11 +150,11 @@ a {
 /*End CSS horoscopes*/
 
 /*Start CSS block3*/
-.container__block3 {
+.block3 {
 	margin-top: 20px;
 }
 
-.container__block3__info img {
+.block3__info img {
 	max-width: 115px;
 	max-height: 113px;
 	float: right;
@@ -174,7 +173,7 @@ a {
 /*End CSS block3*/
 
 /*Start CSS competions*/
-.container__competions {
+.competions {
 	margin-top: 5px;
 	border-top: 1px solid #595959;
 }
