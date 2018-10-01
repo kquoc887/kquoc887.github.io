@@ -138,19 +138,20 @@ table {
 	margin-top: 42px;
 }
 
-.right__info_pic2 {
-	margin: 20px 0 12px 12px;
+.info__text__pic2 {
+	margin-bottom: 12px;
 }
-.content__right__info a {
+.right__info__text a {
 	text-decoration: none;
 	color:white;
 }
 
-.content__right p {
+.right__info__text {
+	margin-top: 20px;
 	margin-left: 12px;
 }
 
-.content__right__info p:last-child {
+.right__info__text p:last-child {
 	margin-top: 15px;
 	padding-top: 10px;
 	border-top: 1px dotted;
