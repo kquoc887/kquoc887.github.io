@@ -89,9 +89,15 @@ table {
  	margin-top: 20px;
  	margin-right: 90px;
  	margin-left: 40px;
- 	list-style-image: url("../images/star.png");
  	list-style-position: inside;
  }
+
+.facts__list li:before {
+	content: url("../images/star.png");
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
  /*End CSS container__facts*/
 
 /*Start CSS comment*/

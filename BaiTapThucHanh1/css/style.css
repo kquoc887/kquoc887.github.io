@@ -38,8 +38,10 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+ blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
@@ -51,26 +53,26 @@ table {
 .container {
 	width: 1262px;
 	margin: auto;
-	font-family: "Times New Roman", Times, serif;
 	font-size: 10px;
 }
-.container__header {
+.header {
 	background-color: #2D2F35;
 }
 .title {
 	color: #FFFF00;
-	font-size: 16px;
+	font-size: 28px;
 }
 
 .content {
 	color: #cccccc;
-	margin-top: 35px;
+	margin-top: 19px;
 	margin-bottom: 13px;
+	font-size: 16px;
 }
 /*Start CSS intro*/
-.container__intro {
+.intro {
 	background-image: url("../images/bg_home_intro.gif");
-	height: 302px;
+	height: 300px;
 	position: relative;
 	border-top: 1px solid #474a51;
 }
@@ -85,7 +87,7 @@ table {
 	height: 235px;
 }
 
-.container__intro img {
+.intro img {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -96,18 +98,18 @@ table {
 /*End CSS intro*/
 
 /*Start CSS menu*/
-.container__menu {
+.menu {
 	background-color: #2D2F35;
 	height: 145px;
 	border-top: 1px solid #474a51;
 }
 
-.container__menu__list{
+.menu__list{
 	margin-left: 180px;
 	padding-top: 25px;
 }
 
-.list__item {
+.menu__list__item {
 	position: relative;
 	width: 220px;
 	height: 100px;
@@ -128,16 +130,20 @@ table {
 	top: 0;
 	z-index: 2;
 }
+.clear {
+	clear: both;
+	float: none;
+}
 /*End CSS menu*/
 
 /*Start CSS contact*/
-.container__contact {
+.contact {
 	height: 380px;
 	background-color: #2D2F35;
 	border-top: 1px solid #474a51;
 }
 
-.container__contact__content-trai {
+.contact__content-trai {
 	position: relative;  
 	width: 406px;
 	height: 336px;
@@ -145,33 +151,33 @@ table {
 	float: left;
 }
 
-.container__contact__content__texttrai {
+.contact__content__texttrai {
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 2;
 }
 
-.container__contact__content__imgtrai {
+.contact__content__imgtrai {
 	position: absolute;
 	right: 0;
 	bottom: -25px;
 	z-index: 1;
 }
 
-.container__contact__content__texttrai .title {
+.contact__content__texttrai .title {
 	font-size: 16px;
 	margin-bottom: 10px;
 }
 
-.container__contact__content__texttrai .content {
+.contact__content__texttrai .content {
 	color: #ffffff;
 	margin-top: 0px;
 	font-size: 15px;
 	text-align: justify;
 }
 
-.container__contact__content-phai {
+.contact__content-phai {
 	position: relative;
 	width: 400px;
 	height: 370px;
@@ -179,24 +185,24 @@ table {
 	float: left;
 }
 
-.container__contact__content__textphai {
+.contact__content__textphai {
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 2;
 }
-.container__contact__content__imgphai {
+.contact__content__imgphai {
 	position: absolute;
 	top: 0;
 	left: : 0;
 	z-index: 1;
 }
 
-.container__contact__content__textphai .title {
+.contact__content__textphai .title {
 	font-size: 24px;
 }
 
-.container__contact__content__textphai .content {
+.contact__content__textphai .content {
 	color: #ffffff;
 	margin-top: 45px;
 	font-size: 14px;
@@ -205,13 +211,11 @@ table {
 /*End CSS contact*/
 
 /*Start CSS footer*/
-.container__footer {
+.footer {
 	background: #24262a;
-	/*background-repeat: repeat-x;*/
 	height: 122px;
 	border-top: 1px solid #474a51;
 	text-align: center;
-	/*clear: both;*/
 	color: #ffffff;
 }
 /*End CSS footer*/

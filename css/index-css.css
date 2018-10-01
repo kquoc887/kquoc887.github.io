@@ -1,17 +1,17 @@
-.wrapper__header{
+.header{
 	color: blue;
 	font-size: 30px;
 	text-align: center;
 }
-.wrapper__container{
+.container{
 	margin-left: 200px;
 }
-.wrapper__container__title{
+.container__title{
 	font-size: 20px;
 }
-.wrapper__container__a:visited{
+.container a:visited{
 	color: blue;
 }
-.wrapper__container__a:hover{
+.container a:hover{
 	color: red;
 }
