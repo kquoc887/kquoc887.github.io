@@ -1,0 +1,66 @@
+.wrapper {
+    width: 1124px;
+    margin: auto;
+}
+
+.wrapper img {
+    display: block;
+}
+
+.wrapper .block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.wrapper .block .btn {
+    background-image: url("../images/img_btn.png");
+    width: 418px;
+    height: 50px;
+}
+
+.wrapper .block .btn:hover {
+    background-image: url("../images/img_btn_on.png");
+}
+
+.wrapper .block .left {
+    position: relative;
+    width: 562px;
+    height: 296px;
+}
+
+.wrapper .block .left .pic1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wrapper .block .left .btn {
+    position: absolute;
+    top: 225px;
+    left: 114px;
+}
+
+.wrapper .block .right {
+    position: relative;
+    width: 562px;
+    height: 296px;
+}
+
+.wrapper .block .right .pic1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wrapper .block .right .btn {
+    position: absolute;
+    top: 225px;
+    left: 27px;
+}
+
+.wrapper .banner {
+    margin-top: 24px;
+}

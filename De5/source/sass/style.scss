@@ -1,0 +1,54 @@
+.wrapper {
+	width: 1124px;
+	margin:auto;
+	img {
+		display: block;
+	}
+	.block {
+		display: flex;
+		.btn {
+			background-image: url("../images/img_btn.png");
+			width: 418px;
+			height: 50px;
+			&:hover{
+				background-image: url("../images/img_btn_on.png");
+			}
+		}
+		.left {
+			position: relative;
+			width: 562px;
+			height: 296px;
+			.pic1 {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.btn {
+				position: absolute;
+				top: 225px;
+				left: 114px;
+			}
+		}
+		.right {
+			position: relative;
+			width: 562px;
+			height: 296px;
+			.pic1 {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.btn {
+				position: absolute;
+				top: 225px;
+				left: 27px;
+			}
+		}
+
+
+	}
+	.banner {
+		margin-top: 24px;
+	}
+
+}
