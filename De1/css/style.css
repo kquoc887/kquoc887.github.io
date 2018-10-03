@@ -57,7 +57,7 @@ table {
 /*Start CSS profile*/
 .profile__title {
 	height: 25px;
-	background-image: url("../images/pic_title_background.gif.gif");
+	background-image: url("../images/pic_title_background.gif");
 	font-weight: bold;
 	line-height: 25px;
 }
