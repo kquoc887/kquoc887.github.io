@@ -57,7 +57,7 @@ table {
 
 /*Start CSS header*/
 .header {
-		background-image: url("../images/logo_01.png");
+		background-image: url("../images/logo_header.png");
 		height: 253px;
 		position: relative;
 }
@@ -112,7 +112,7 @@ table {
 	padding-top: 30px;
 	padding-bottom: 38px;
 	border-top: 1px solid #2c2c2c;
-	list-style: url("../images/arr.gif");
+	list-style: url("../images/pic_arr.gif");
 	list-style-position: inside; 
 }
 
@@ -140,6 +140,10 @@ table {
 
 .info__text__pic2 {
 	margin-bottom: 12px;
+	width: 114px;
+	height: 19px;
+	background: #2c2c2c;
+	border: none;
 }
 .right__info__text a {
 	text-decoration: none;
