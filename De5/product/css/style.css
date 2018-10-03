@@ -207,6 +207,7 @@ table {
     display: flex;
     background-color: #8b1a20;
     font-size: 9px;
+    color: #f8f4f5;
     list-style: url("../images/pic_arrow.png");
     list-style-position: inside;
 }
@@ -222,6 +223,5 @@ table {
 
 .wrapper .footer li:last-child {
     list-style: none;
-    color: #f8f4f5;
     margin-left: 431px;
 }
