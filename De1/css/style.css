@@ -57,7 +57,7 @@ table {
 /*Start CSS profile*/
 .profile__title {
 	height: 25px;
-	background-image: url("../images/title_background.gif");
+	background-image: url("../images/pic_title_background.gif.gif");
 	font-weight: bold;
 	line-height: 25px;
 }
@@ -93,7 +93,7 @@ table {
  }
 
 .facts__list li:before {
-	content: url("../images/star.png");
+	content: url("../images/pic_star.png");
 	vertical-align: middle;
 	margin-right: 5px;
 }
