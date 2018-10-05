@@ -54,12 +54,11 @@ table {
 .container__example {
 	color: #F55062;
 	font-size: 20px;
-	clear: both;
 }
 /*End CSS container__example*/
 
 /*Start CSS container__list-1*/
-.container__list1{
+.list1{
 	margin-left: 200px;
 	margin-top: 30px;
 }
@@ -81,7 +80,7 @@ table {
 /*End CSS list-1__item*/
 
 /*Start CSS container__list-2*/
-.container__list2{
+.list2{
 	border: 1px solid #E8E4DB;
 	width: 265px;
 	height: 167px;
@@ -90,11 +89,11 @@ table {
 	margin-left: 150px;
 	margin-top: 50px;
 }
-.list2__item__a{
+.list2__item__link{
 	text-decoration: none;
 	color: black;
 }
-.list2_item__a--active{
+.list2_item__link--active{
 	color: #83CED7;
 }
 /*End CSS container__list-2*/
