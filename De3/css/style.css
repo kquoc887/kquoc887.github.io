@@ -134,7 +134,6 @@ table {
 .content__right{
 	float: left;
 	width: 402px;
-	/* padding-bottom: 70px; */
 }
 
 .content__right__inner {
@@ -160,12 +159,12 @@ table {
 	margin-top: 20px;
 	margin-left: 12px;
 }
-
-.inner__link {
+.inner__info__text p:last-child {
 	margin-top: 15px;
 	padding-top: 10px;
 	border-top: 1px dotted;
 }
+
 
 .inner__banner2 {
 	margin-top: 38px;

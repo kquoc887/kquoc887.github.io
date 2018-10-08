@@ -76,7 +76,8 @@ a {
 
 .title {
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 16px;
+	font-family: "Times New Roman", Times, serif;
 }
 
  /*Start CSS blogroll*/
@@ -102,20 +103,27 @@ a {
  	padding-left: 10px;
  	height: 20px;
  	background-color: #fbf0c0;
+ }
 
+ .blogroll__info__list a span {
+ 	color: #0a6395;
+ 	font-weight: bold;
  }
  /*End CSS blogroll*/
 
 /*Start CSS Horoscopes*/ 
 .horoscopes {
 	margin-top: 5px;
+	font-family: Arial;
+	font-size: 11px;
 }
 
-.horoscopes__info {
+
+/*.horoscopes__info {
 	overflow: hidden;
-}
+}*/
  .horoscopes__info__img{
- 	margin-left: 15px;
+ 	margin-left: 13px;
  	margin-top: 20px;
  	width: 111px;
  	height: 141px;
@@ -124,18 +132,20 @@ a {
 
 .horoscopes__info__title {
 	margin-top: 25px;
-	font-size: 11px;
+	font-size: 15px;
  	font-weight: bold;
 }
 
  .horoscopes__info__date {
  	color: #c5c5c5;
+
  }
 
 .horoscopes__info p:last-child {
-	margin-top: 12px;
-	margin-right: 20px;
-	font-size: 9px;
+	margin-top: 11px;
+	margin-right: 13px;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .horoscopes__footer {
 	background-image: url("../images/pic_horoscopes_footer.png");
@@ -152,6 +162,7 @@ a {
 /*Start CSS block3*/
 .block3 {
 	margin-top: 20px;
+	font-family: "Times New Roman", Times, serif;
 }
 
 .block3__info img {
@@ -184,6 +195,7 @@ a {
 	padding-bottom: 12px;
 	border: 1px solid #595959;
 	background-color: #fff;
+	font-family: "Times New Roman", Times, serif;
 }
 
 .compettions__list li a {
