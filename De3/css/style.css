@@ -50,9 +50,9 @@ table {
 	width: 1263px;
 	background-color: #121212;
 	color: #595959;
-	font-size: 11px;
+	font-size: 13px;
 	line-height: 1.63;
-	font-family: Georgia,  serif;
+	font-family: "Times New Roman", Times, serif;
 }
 
 /*Start CSS header*/
@@ -87,6 +87,7 @@ table {
 /*Start CSS content__left*/
 .content {
 	margin: 110px 0 0 70px;
+
 }
 .content__left {
 	width: 237px;
@@ -94,71 +95,80 @@ table {
 	padding-top: 45px;
 	margin-right: 40px;
 	float: left;
+	padding-bottom: 32px;
 }
 
-.content__left__info1 {
-	padding-top: 20px;
-	margin: 0px 22px;
-	width: 183px;
+.content__left__inner {
+	width: 192px;
+	height: 284px;
+	margin-left: 18px;
+	padding-bottom: 47px;
 	border-top: 1px solid #7e7e7e;
 }
-
-.content__left__info1 p {
+.content__left__inner p {
 	margin-left: 12px;
+	margin-top: 26px;
+	border-bottom: 1px solid #2c2c2c;
+	padding-bottom: 65px;
 }
 
-.content__left__info2 {
-	margin: 65px 22px 0px;
-	padding-top: 30px;
-	padding-bottom: 38px;
-	border-top: 1px solid #2c2c2c;
+.content__left__inner ul {
+	/* margin: 65px 22px 0px; */
+	margin-top: 28px;
+	/* padding-bottom: 92px; */
 	list-style: url("../images/pic_arr.gif");
-	list-style-position: inside; 
+	list-style-position: inside;
+}
+.content__left__inner li {
+	margin-bottom: 11px;
+	margin-left: 20px;
 }
 
-
-
-.content__left__info2 li {
-	margin-bottom: 12px;
-	margin-left: 23px;
-}
-
-.content__left__info2 li a{
+.content__left__inner li a{
 	color:#707070;
 }
+
 /*End CSS content__left*/
 
 /*Start CSS content__right*/
 .content__right{
 	float: left;
 	width: 402px;
+	/* padding-bottom: 70px; */
 }
 
-.content__right__info {
+.content__right__inner {
 	margin-top: 42px;
+	width: 393px;
+	height: 527px;
+	padding-bottom: 70px;
 }
 
-.info__text__pic2 {
+.inner__text__pic2 {
 	margin-bottom: 12px;
 	width: 114px;
 	height: 19px;
 	background: #2c2c2c;
 	border: none;
 }
-.right__info__text a {
+.inner__info__text a {
 	text-decoration: none;
 	color:white;
 }
 
-.right__info__text {
+.inner__info__text {
 	margin-top: 20px;
 	margin-left: 12px;
 }
 
-.right__info__text p:last-child {
+.inner__link {
 	margin-top: 15px;
 	padding-top: 10px;
 	border-top: 1px dotted;
+}
+
+.inner__banner2 {
+	margin-top: 38px;
 }
 
 /*End CSS content*/
@@ -176,3 +186,4 @@ table {
 	border-top: 1px dotted;
 }
 /*End CSS footer*/
+393 527
