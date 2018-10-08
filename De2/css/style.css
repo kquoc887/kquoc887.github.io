@@ -50,9 +50,11 @@ table {
 /*End Reset CSS*/
 
 body {
-	font-size: 10px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-family: "Times New Roman", Times, serif;
 	color: #595959;
+	background: black;
 }
 
 a {
@@ -67,22 +69,29 @@ a {
 	background-color: #121214;
 }
 
-.moreinfo  {
+.inner {
+	width: 700px;
+	/*margin: auto;*/
+	margin-left: 68px;
+}
+
+.inner__moreinfo  {
 	margin-top:15px;
 	display: flex;
 }
 
-.moreinfo img {
+.inner__moreinfo img {
 	margin-right: 7px;
 
 }
  
  /*Strat CSS container__left*/
  .left {
- 	margin-left: 48px;
- 	margin-right: 25px;
- 	width: 407px;
+ 	/*margin-left: 48px;
+ 	margin-right: 25px;*/
+ 	width: 438px;
  	float: left;
+ 	margin-right: 24px;
  }
 
 .left__title {
@@ -112,7 +121,7 @@ a {
 }
 
  .left__article1__info {
- 	margin-top: 20px;
+ 	margin-top: 10px;
  }
 
 .left__article2 {
@@ -127,11 +136,13 @@ a {
 	border-bottom: 1px dotted #3f3f41;
 	width: 390px;
 	padding-bottom: 20px;
+	width: 438px;
 }
 
 .left__article2__list ul {
+	width: 219px;
 	margin-right: 12px;
-	list-style: url("../images/arr.gif");
+	list-style: url("../images/pic_arr.gif");
 	list-style-position: inside;
 }
 

@@ -65,7 +65,7 @@ table {
 
 
 
- ol {
+ .list_product {
    list-style: none;
    counter-reset: item;
    margin: 20px 30px;
