@@ -91,19 +91,22 @@ table {
 .menu li {
 	border: 1px solid #a37e23;
 	max-width: 269px;
-	width: 100% 
+	width: 100%;
+	overflow: hidden;
 }
 
 .menu li p {
-	height: 0px;
+	height: 0;
 	max-width: 269px;
 	width: 100%;
+	overflow: hidden;
 }
 
 .menu li span {
  display: block;
  text-align: center;
  font-size: 20px;
+ margin-bottom: 5px;
  color: blue;
 }
 
@@ -113,9 +116,10 @@ table {
 	width: 100%;
 }
 .about {
-	margin-top: 20px; 
+	/* margin-top: 60px; */
 	margin: auto;
 	display: block;
+	margin-top: 5px;
 	/* width: 142px; */
 }
 
