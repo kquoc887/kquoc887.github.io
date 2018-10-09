@@ -3,12 +3,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Bài tập 3 JS</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 	<div class="container">
-		<div class="slideshow">
-			<img src="images/item_navi_01.png" style="opacity: 0.5" alt="">
+		<div class="inner">
+			<ul class="inner__slide">
+				<li class="slide__item slide__item-active">
+					<img src="images/item_01.png" alt="item_01">
+				</li>
+				<li class="slide__item">
+					<img src="images/item_02.png" alt="item_02">
+				</li>
+				<li class="slide__item ">
+					<img src="images/item_03.png" alt="item_03">
+				</li>
+				<li class="slide__item ">
+					<img src="images/item_04.png" alt="item_04">
+				</li>
+				<li class="slide__item">
+					<img src="images/item_05.png" alt="item_05">
+				</li>
+			</ul>
+			<span class="slide__next" href="#"><img src="images/arrow_r_off.png" alt="slide_next"></span>
+			<span class="slide__prev" href="#"><img src="images/arrow_l_off.png" alt="slide_prev"></span>
+			<ul class="slide__list">
+				<li>
+					<img class="slide__list__icon" src="images/item_navi_01.png" alt="item_navi_01">
+				</li>
+				<li>
+					<img class="slide__list__icon" src="images/item_navi_02.png" alt="item_navi_02">
+				</li>
+				<li>
+					<img class="slide__list__icon" src="images/item_navi_03.png" alt="item_navi_03">
+				</li>
+				<li>
+					<img class="slide__list__icon" src="images/item_navi_04.png" alt="item_navi_04">
+				</li>
+				<li>
+					<img class="slide__list__icon" src="images/item_navi_05.png" alt="item_navi_05">
+				</li>
+			</ul>
 		</div>
 	</div>
+	<script src="js/bai3.js"></script>
 </body>
 </html>
