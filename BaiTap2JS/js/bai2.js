@@ -24,14 +24,17 @@ $(document).ready(function() {
 		$(".js-popup").show().animate({top:50}, 1500);
 	});
 
+	/** event prevent click menu when popup show */
 	$(".js-about").click(function() {
 		$(".js-img").css("pointer-events", "none");
 	})
+	
 	/** event click button close, close popup */
 	$(".js-popup__header__close").click(function() {
 		$(".js-popup").hide().animate({top:-500},"fast");
 		$(".js-img").css("pointer-events", "auto");
 	});
+	
 	
 	function display__content(element) {
 		afterPosition = $(element).parent().index()
