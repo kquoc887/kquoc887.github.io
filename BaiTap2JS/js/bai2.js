@@ -65,7 +65,7 @@ $(document).ready(function() {
 	function prevent_multi_click(element) {
 		setTimeout(function(){
 				$(element).css("pointer-events","auto")
-			},600);
+			},500);
 	}
 
 
