@@ -3,41 +3,71 @@ $(document).ready(function() {
 	var afterPosition;
 	var firstPosition;
 	var list_img = $(".menu li .js-img");
-	console.log(list_img);
 	$(".menu li p").hide();
+	$(".js-popup").hide();
+
+	/** event click menu show menu */
 	$(".menu li .js-img").click(function() {
-		change_image($(this));
+		$(this).css("pointer-events","none");
+		display__content($(this));
 	});
-	function change_image(element) {
+
+	/** event click button about on element odd of menu show popup */
+	$(".menu li:nth-child(odd) .js-about").click(function() {
+		$(".popup__body img").attr("src","images/box_1_img_1.gif");
+		$(".js-popup").show().animate({top:50}, 1500);
+	});
+	/** event click button about on element even of menu show popup */
+	$(".menu li:nth-child(even) .js-about").click(function() {
+		$(".popup__body img").attr("src","images/box_1_img_2.gif");
+		$(".js-popup").show().animate({top:50}, 1500);
+	});
+
+	/** event click button close, close popup */
+	$(".popup__header__close-js").click(function() {
+		$(".js-popup").hide().animate({top:-500},"fast");
+	});
+	
+	function display__content(element) {
 		afterPosition = $(element).parent().index()
 		if (flag == 0) {
 			firstPosition = afterPosition;
 			var src = $(element).attr("src");
 			var src = src.replace(".jpg","_hover.jpg");
 			$(element).attr("src",src);
-			$(element).parent().find('p').show();
+			$(element).parent().find('p').show().animate({height: "200px"}, "slow");
 			flag = 1;
-			console.log(flag);
+			setTimeout(function(){
+				$(element).css("pointer-events","auto")
+			},600);
 		} else {
 			if (firstPosition == afterPosition) {
 				var src = $(element).attr("src");
 				var src = src.replace("_hover.jpg",".jpg");
 				console.log(src);
 				$(element).attr("src",src);
-				$(".menu li p").hide();
+				$(".menu li p").hide().animate({height: "0"}, "slow");
 				flag = 0;
+				setTimeout(function(){
+					$(element).css("pointer-events","auto")
+				},600);
 			} else {
-				console.log(flag);
 				var oldSrc = $(list_img[firstPosition]).attr("src");
 				var oldSrc = oldSrc.replace("_hover.jpg",".jpg");
 				$(list_img[firstPosition]).attr("src", oldSrc);
-				$(list_img[firstPosition]).parent().find("p").hide();
+				$(list_img[firstPosition]).parent().find("p").hide().animate({height: "0"}, "slow");
 				var startSrc = $(list_img[afterPosition]).attr("src");
 				var startSrc = startSrc.replace(".jpg","_hover.jpg");
 				$(list_img[afterPosition]).attr("src",startSrc);
-				$(list_img[afterPosition]).parent().find("p").show();
+				$(list_img[afterPosition]).parent().find("p").show().show().animate({height: "200px"}, "slow");
 				firstPosition = afterPosition;
+				setTimeout(function(){
+					$(element).css("pointer-events","auto")
+				},600);
 			}
 		}
 	}
+
+
+
 });

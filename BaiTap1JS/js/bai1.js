@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	$("#name_product").attr("maxlength","30");
+	$("#name_product-js").attr("maxlength","30");
 	$("#btn_add-js").click(function(){
-		var product_name = $("#name_product").val().trim();
+		var product_name = $("#name_product-js").val().trim();
 		var list_product = $(".list_product-js li");
 		if (product_name == "") {
 			alert("Please enter product name");
