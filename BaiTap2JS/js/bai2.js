@@ -34,12 +34,10 @@ $(document).ready(function() {
 			firstPosition = afterPosition;
 			var src = $(element).attr("src");
 			var src = src.replace(".jpg","_hover.jpg");
+			prevent_multi_click($(element));
 			$(element).attr("src",src);
 			$(element).parent().find('p').show().animate({height: "200px"}, "slow");
 			flag = 1;
-			setTimeout(function(){
-				$(element).css("pointer-events","auto")
-			},600);
 		} else {
 			if (firstPosition == afterPosition) {
 				var src = $(element).attr("src");
@@ -48,9 +46,7 @@ $(document).ready(function() {
 				$(element).attr("src",src);
 				$(".menu li p").hide().animate({height: "0"}, "slow");
 				flag = 0;
-				setTimeout(function(){
-					$(element).css("pointer-events","auto")
-				},600);
+				prevent_multi_click($(element));
 			} else {
 				var oldSrc = $(list_img[firstPosition]).attr("src");
 				var oldSrc = oldSrc.replace("_hover.jpg",".jpg");
@@ -61,13 +57,16 @@ $(document).ready(function() {
 				$(list_img[afterPosition]).attr("src",startSrc);
 				$(list_img[afterPosition]).parent().find("p").show().show().animate({height: "200px"}, "slow");
 				firstPosition = afterPosition;
-				setTimeout(function(){
-					$(element).css("pointer-events","auto")
-				},600);
+				prevent_multi_click($(element));
 			}
 		}
 	}
 
+	function prevent_multi_click(element) {
+		setTimeout(function(){
+				$(element).css("pointer-events","auto")
+			},600);
+	}
 
 
 });
