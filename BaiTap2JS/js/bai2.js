@@ -2,12 +2,12 @@ $(document).ready(function() {
 	var flag = 0;
 	var afterPosition;
 	var firstPosition;
-	var list_img = $(".menu li .js-img");
+	var list_img = $(".js-img");
 	$(".menu li p").hide();
 	$(".js-popup").hide();
 
 	/** event click menu show menu */
-	$(".menu li .js-img").click(function() {
+	$(".js-img").click(function() {
 		$(this).css("pointer-events","none");
 		display__content($(this));
 	});
