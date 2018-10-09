@@ -17,6 +17,7 @@ $(document).ready(function() {
 		$(".popup__body img").attr("src","images/box_1_img_1.gif");
 		$(".js-popup").show().animate({top:50}, 1500);
 	});
+	
 	/** event click button about on element even of menu show popup */
 	$(".menu li:nth-child(even) .js-about").click(function() {
 		$(".popup__body img").attr("src","images/box_1_img_2.gif");
