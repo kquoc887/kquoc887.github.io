@@ -96,6 +96,9 @@ table {
 }
 
 .menu li p {
+	padding: 0 5px;
+	box-sizing: border-box;
+	word-wrap: break-word;
 	height: 0;
 	max-width: 269px;
 	width: 100%;

@@ -7,46 +7,55 @@
 	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+	<!-- start container -->
 	<div class="container">
-		<div class="inner">
-			<ul class="inner__slide">
-				<li class="slide__item slide__item-active">
-					<img src="images/item_01.png" alt="item_01">
+		<!-- start slider__inner -->
+			<div class="slider__inner">
+				<!-- start slider__list -->
+				<ul class="slider__list js-slider__list" >
+					<li>
+						<img src="images/item_01.png" alt="item_01">
+					</li>
+					<li >
+						<img src="images/item_02.png" alt="item_02">
+					</li>
+					<li>
+						<img src="images/item_03.png" alt="item_03">
+					</li>
+					<li>
+						<img src="images/item_04.png" alt="item_04">
+					</li>
+					<li>
+						<img src="images/item_05.png" alt="item_05">
+					</li>
+				</ul>
+				<!-- end slider__list -->
+			</div>
+		<!-- end slider__inner -->
+			<span class="slider__next js-slider__next" href="#"><img src="images/arrow_r_off.png" alt="slide_next"></span>
+			<span class="slider__prev js-slider__prev" href="#"><img src="images/arrow_l_off.png" alt="slide_prev"></span>
+			<!-- start slider__icons -->
+			<ul class="slider__icons js-slider__icons">
+				<li>
+					<img  src="images/item_navi_01.png" alt="item_navi_01">
 				</li>
-				<li class="slide__item">
-					<img src="images/item_02.png" alt="item_02">
+				<li>
+					<img  src="images/item_navi_02.png" alt="item_navi_02">
 				</li>
-				<li class="slide__item ">
-					<img src="images/item_03.png" alt="item_03">
+				<li>
+					<img  src="images/item_navi_03.png" alt="item_navi_03">
 				</li>
-				<li class="slide__item ">
-					<img src="images/item_04.png" alt="item_04">
+				<li>
+					<img  src="images/item_navi_04.png" alt="item_navi_04">
 				</li>
-				<li class="slide__item">
-					<img src="images/item_05.png" alt="item_05">
+				<li>
+					<img  src="images/item_navi_05.png" alt="item_navi_05">
 				</li>
 			</ul>
-			<span class="slide__next" href="#"><img src="images/arrow_r_off.png" alt="slide_next"></span>
-			<span class="slide__prev" href="#"><img src="images/arrow_l_off.png" alt="slide_prev"></span>
-			<ul class="slide__list">
-				<li>
-					<img class="slide__list__icon" src="images/item_navi_01.png" alt="item_navi_01">
-				</li>
-				<li>
-					<img class="slide__list__icon" src="images/item_navi_02.png" alt="item_navi_02">
-				</li>
-				<li>
-					<img class="slide__list__icon" src="images/item_navi_03.png" alt="item_navi_03">
-				</li>
-				<li>
-					<img class="slide__list__icon" src="images/item_navi_04.png" alt="item_navi_04">
-				</li>
-				<li>
-					<img class="slide__list__icon" src="images/item_navi_05.png" alt="item_navi_05">
-				</li>
-			</ul>
+			<!-- end slider__icons -->
 		</div>
 	</div>
+	<!-- end container -->
 	<script src="js/bai3.js"></script>
 </body>
 </html>

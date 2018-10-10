@@ -37,7 +37,7 @@ $(document).ready(function() {
 	
 	
 	function display__content(element) {
-		afterPosition = $(element).parent().index()
+		afterPosition = $(element).parent().index();
 		if (flag == 0) {
 			firstPosition = afterPosition;
 			var src = $(element).attr("src");
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			prevent_multi_click($(element));
 			$(element).attr("src",src);
 			$(element).parent().find('p').show();
-			$(element).parent().find('p').animate({height: "200px", margin: "10px 5px"},800);
+			$(element).parent().find('p').animate({height: "200px"},800);
 			flag = 1;
 		} else {
 			if (firstPosition == afterPosition) {
@@ -53,7 +53,7 @@ $(document).ready(function() {
 				var src = src.replace("_hover.jpg",".jpg");
 				$(element).attr("src",src);
 				prevent_multi_click($(element));
-				$(element).parent().find("p").animate({height: "0px", margin: "0px"}, 1000);
+				$(element).parent().find("p").animate({height: "0px"}, 1000);
 				flag = 0;
 			} else {
 				var oldSrc = $(list_img[firstPosition]).attr("src");
