@@ -7,8 +7,7 @@ $(document).ready(function() {
 	var icons = $(".js-slider__icons li img");
 	var autoPlay = autoSlide();
 	$(icons[count]).css("opacity","0.5");
-
-
+	console.log(maxImg);
 	/** function prevent users click many times; */
 	function preventMultiClick() {
 		$(".js-slider__next").css("pointer-events", "none");
@@ -18,19 +17,20 @@ $(document).ready(function() {
 			$(".slider__prev").css("pointer-events", "auto");
 		},600);
 	}
-
 	/** handle when user click on slider__next  */
 	function nextClick(){
 		count +=1;
+		console.log(count);
 		$(icons).css("opacity","1");
-		distance += 648;
 		if (count < maxImg) {
+			distance += 648;
 			$(".js-slider__list").animate({right: distance+"px"},600);
 		} else {
-			count =0;
-			distance =0;
-			$(".js_slider__list").animate({right: "0"},600);
+			count = 0;
+			distance = 0;
+			$(".js-slider__list").animate({right: distance},600);
 		}
+		console.log(count);
 		$(icons[count]).css("opacity","0.5");
 		preventMultiClick();
 	}
@@ -40,13 +40,13 @@ $(document).ready(function() {
 		$(icons).css("opacity","1");
 		if(count >0) {
 			count --;
+			console.log(count)
 			distance -= 648;
 			$(".js-slider__list").animate({right: distance+"px"},600);
 		} else {
 			count = maxImg-1;
 		    distance = widthImg * (maxImg-1);
 			$(".js-slider__list").animate({right: distance+"px"},600);
-		
 		}
 		$(icons[count]).css("opacity","0.5");
 		preventMultiClick();
