@@ -7,20 +7,22 @@ $(document).ready(function() {
 	var icons = $(".js-slider__icons li img");
 	var autoPlay = autoSlide();
 	$(icons[count]).css("opacity","0.5");
-	console.log(maxImg);
+
 	/** function prevent users click many times; */
 	function preventMultiClick() {
+
 		$(".js-slider__next").css("pointer-events", "none");
 		$(".js-slider__prev").css("pointer-events", "none");
 		setTimeout(function() {
 			$(".slider__next").css("pointer-events", "auto");
 			$(".slider__prev").css("pointer-events", "auto");
+			$(".js-slider__icons li").css("pointer-events","auto");
 		},600);
 	}
+
 	/** handle when user click on slider__next  */
 	function nextClick(){
 		count +=1;
-		console.log(count);
 		$(icons).css("opacity","1");
 		if (count < maxImg) {
 			distance += 648;
@@ -30,7 +32,6 @@ $(document).ready(function() {
 			distance = 0;
 			$(".js-slider__list").animate({right: distance},600);
 		}
-		console.log(count);
 		$(icons[count]).css("opacity","0.5");
 		preventMultiClick();
 	}
@@ -40,7 +41,6 @@ $(document).ready(function() {
 		$(icons).css("opacity","1");
 		if(count >0) {
 			count --;
-			console.log(count)
 			distance -= 648;
 			$(".js-slider__list").animate({right: distance+"px"},600);
 		} else {
@@ -74,6 +74,7 @@ $(document).ready(function() {
 
 	/** event when user click selector */
 	$(".js-slider__icons li").click(function(){
+		$(this).css("pointer-events","none");
 		clearInterval(autoPlay);
 		$(icons).css("opacity","1");
 		$(this).find('img').css("opacity","0.5");
