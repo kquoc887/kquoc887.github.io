@@ -17,7 +17,7 @@ $(document).ready(function() {
 			$(".slider__next").css("pointer-events", "auto");
 			$(".slider__prev").css("pointer-events", "auto");
 			$(".js-slider__icons li").css("pointer-events","auto");
-		},600);
+		},1000);
 	}
 
 	/** handle when user click on slider__next  */
