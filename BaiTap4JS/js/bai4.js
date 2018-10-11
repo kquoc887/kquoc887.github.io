@@ -5,7 +5,7 @@ $(document).ready(function() {
 	var widthImg = $(".slide__list__item li img").width();
 	var arr__item__nav = $(".list__nav li");
 	var maxItemNav = $(".list__nav li").length;
-	// var autoPlay=autoSlide();
+	var autoPlay=autoSlide();
 	var item_nav = $(".list__nav li");
 	item_nav.hide();
 	// $(".list__nav li").hide();
@@ -77,6 +77,7 @@ $(document).ready(function() {
 	}
 
 	$(".list__nav").click(function() {
+		clearInterval(autoPlay);
 		setClickAll("none");
 		$(".list__nav li").show();
 		clickMode(item_nav, "auto");
@@ -93,21 +94,30 @@ $(document).ready(function() {
 			$(this).addClass('list__item-active');
 			clickMode(item_nav, "none");
 			$(".list__nav li").css("pointer-events","none");
+			autoPlay = autoSlide();
 	});
 	
 	$(".slide__next").click( function(){
+		clearInterval(autoPlay);
 		nextClick();
+		autoPlay = autoSlide();
 	});
 
 	$(".slide__prev").click( function(){
+		clearInterval(autoPlay);
 		prevClick();
+		autoPlay = autoSlide();
 	});
 
 	$(".js-slide__list__item li img").on("swipeleft",function(){
+		clearInterval(autoPlay);
 		nextClick();
+		autoPlay = autoSlide();
 	});
 	$(".js-slide__list__item li img").on("swiperight",function(){
+		clearInterval(autoPlay);
 		prevClick();
+		autoPlay = autoSlide();
 	});
 
 });
