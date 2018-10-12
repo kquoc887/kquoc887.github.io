@@ -71,8 +71,9 @@ table {
 {
 	position: absolute;
 	z-index: 3;
-	left: 15%;
-	margin-right: 10px;
+	/* left: 15%; */
+	margin-left: 13%;
+	margin-right: 10%;
 }
 
 
