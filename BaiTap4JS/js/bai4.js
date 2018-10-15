@@ -20,8 +20,8 @@ function autoSlide() {
  * output: pointer-events of element slide__next, slide__prev already set in str.
  */
  function setClickAll(str) {
- 	$(".slide__next").css("pointer-events", str);
- 	$(".slide__prev").css("pointer-events", str);
+ 	$(".js-slide__next").css("pointer-events", str);
+ 	$(".js-slide__prev").css("pointer-events", str);
  }
 
 /**
@@ -30,7 +30,7 @@ function autoSlide() {
  */
  function moveSlide() {
  	distance =  100 * nextElementPosition;
- 	$(".js-slide__list__item").animate({right: distance+"%"}, "600");
+ 	$(".js-slide__list__item").animate({right: distance+"%"}, 600);
  	$(arr__item__nav[currentElementPosition]).hide();
  	$(arr__item__nav[nextElementPosition]).show();;
  	$(".list__item-active").removeClass("list__item-active");
@@ -115,14 +115,14 @@ function autoSlide() {
  	});
 
  	/** event when user click right arrow */
- 	$(".slide__next").click( function(){
+ 	$(".js-slide__next").click( function(){
  		clearInterval(autoPlay);
  		nextClick();
  		autoPlay = autoSlide();
  	});
 
  	/** event when user click left arrow */
- 	$(".slide__prev").click( function(){
+ 	$(".js-slide__prev").click( function(){
  		clearInterval(autoPlay);
  		prevClick();
  		autoPlay = autoSlide();
