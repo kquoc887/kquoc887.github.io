@@ -1,166 +1,84 @@
 $(document).ready(function() {
-
-	var myCanvas = $("#myCanvas").get(0);
-	var ctx = myCanvas.getContext("2d");
-	var xscale = 1;
-	var yscale = 0.6;
-	var radius = 200;
-	var xcenter = myCanvas.width/2;
-	var ycenter = myCanvas.height;
-	var move = 10;
-	console.log(xcenter + " " + ycenter);
-
-	function drawPieSlice1(ctx, centerX, centerY, radius, startAngle, endAngle, i) {
- 
- 		ctx.save();
-		ctx.scale(1,0.6);
-		ctx.beginPath();
-		ctx.moveTo(centerX,centerY-i);
-		ctx.arc(centerX, centerY - i, radius, startAngle, endAngle);
-		ctx.restore();
-		if ( i == 99 ) {
-			ctx.fillStyle = "#99CCFF";
-		}		
-		else
-		{
-			ctx.fillStyle = "#66CCFF";
+	var canvas= $("#myCanvas").get(0);
+	var move 	= 10;
+	console.log(canvas.height);
+	var PieChart = function () {
+		this.ctx = canvas.getContext("2d");
+		this.x = canvas.width/2;
+		this.y = canvas.height;
+		this.radius = 200;
+		this.xscale = 1;
+		this.yscale =0.4;
+		this.drawSlicePieSuccess = function(ctx, centerX, centerY, radius, startAngle, endAngle, i) {
+			// console.log(this.xscale, this.yscale);
+			ctx.save();
+			ctx.scale(this.xscale,this.yscale);
+			ctx.beginPath();
+			ctx.moveTo(centerX,centerY-i);
+			ctx.arc(centerX, centerY - i, radius, startAngle, endAngle);
+			ctx.restore();
+			if ( i == 99 ) {
+				ctx.fillStyle = color[1];
+			} else {
+				ctx.fillStyle = color[0];
+			}
+			ctx.fill();	
 		}
-		ctx.fill();		
-	}
-	function drawPieSlice2(ctx, centerX, centerY, radius, startAngle, endAngle, i) {
- 
- 		ctx.save();
-		ctx.scale(1,0.6);
-		ctx.beginPath();
-		ctx.moveTo(centerX-move,centerY+10);
-		ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-		ctx.restore();
-		if ( i == 99 ) {
-			ctx.fillStyle = "#FF0000";
-		}		
-		else
-		{
-			ctx.fillStyle = "#880000";
+		this.drawSlicePieFail = function(ctx, centerX, centerY, radius, startAngle, endAngle,i) {
+			ctx.save();
+			ctx.scale(this.xscale, this.yscale);
+			ctx.beginPath();
+			if (data[0] > data [1])
+			{
+				ctx.moveTo((centerX +move),(centerY-move-i ));
+				ctx.arc((centerX +move ), (centerY-move- i), radius, startAngle, endAngle);
+			} else if (data[0]== 0.5) {
+				ctx.moveTo((centerX),(centerY - move -i ));
+				ctx.arc((centerX), (centerY - move - i), radius, startAngle, endAngle);
+			} else {
+				ctx.moveTo((centerX -move),(centerY-move-i ));
+				ctx.arc((centerX  - move ), (centerY-move- i), radius, startAngle, endAngle);
+			}
+			ctx.restore();
+			if ( i == 99 ) {
+				ctx.fillStyle = color[3];
+			} else {
+				ctx.fillStyle = color[2];
+			}
+			ctx.fill();
+		};
+		this.draw = function() {
+			for (var i = 0; i < 100; i++) {
+				this.drawSlicePieSuccess(this.ctx, this.x, this.y, this.radius, 0, 2* Math.PI * data[0], i);
+				this.drawSlicePieFail(this.ctx, this.x, this.y, this.radius, 2*Math.PI*data[0], 0, i);
+			}
+		};
+		this.drawTitle = function() {
+			this.ctx.font = "20px Arial";
+			this.ctx.fillStyle="#5bc1e3";
+			this.ctx.fillText("Biểu đồ tổng quan khung năng lực",300,350);
+		};
+
+
+
+		this.drawLine = function() {
+			this.ctx.beginPath();
+			let labelX = this.x +(this.radius * Math.cos(Math.PI* data[0]));
+			let labelY =this.y+ (this.radius * Math.sin(Math.PI * data[0]));
+			let middleX = (this.x + labelX)/2;
+			let middleY = ((this.y * + labelY)/2) * this.yscale;
+			this.ctx.moveTo(100,100);
+			this.ctx.lineTo(300,100);
+			this.ctx.lineTo(middleX,middleY);
+			this.ctx.stroke();
+			// console.log(labelX + "" + labelY);
 		}
-		ctx.fill();
-	}
-	// drawPieSlice(_ctx, 150,150,150, Math.PI/2, Math.PI/2 + Math.PI/4);
-	for (var i = 0; i < 100; i++) {
-		drawPieSlice1(ctx, xcenter, ycenter,200,0, 2* Math.PI * 0.8, i);
-
-	}
-	// for (var i = 0; i < 100; i++) {
-	// 	drawPieSlice2(ctx, xcenter+10, ycenter-10,200,(2* Math.PI * 0.8),0, i);
-
-	// }
-	// while ( i < 2000)
-	// {
-	// 	if (i == 1999)
-	// 	{
-	// 		drawPieSlice(_ctx, 150,150,150, Math.PI/2, Math.PI/2 + Math.PI/4, 'blue');
-	// 	}
-	// 	else {
-	// 		drawPieSlice(_ctx, 150,150,150, Math.PI/2, Math.PI/2 + Math.PI/4, '#ff0000');
-	// 	}
-	// 	i++;
-	// }
-	// for (i < 100 ;i++) {
-	// 	drawPieSlice(_ctx, 150,150,150, Math.PI/2, Math.PI/2 + Math.PI/4, '#ff0000');
-	// }
-
-	
-	// var myVinyls = {
-
-	// 	"Classical music": 0.8,
-
-	// 	"Alternative rock": 0.2
-
-	// };
-
-	// var Piechart = function(options){
-
-	// 	this.options = options;
-
-	// 	this.canvas = options.canvas;
-
-	// 	this.ctx = this.canvas.getContext("2d");
-
-	// 	this.colors = options.colors;
-
-
-
-	// 	this.draw = function(){
-
-	// 		var total_value = 0;
-
-	// 		var color_index = 0;
-
-	// 		for (var categ in this.options.data){
-
-	// 			var val = this.options.data[categ];
-
-	// 			total_value += val;
-
-	// 		}
-
-
-
-	// 		var start_angle = 0;
-
-	// 		for (categ in this.options.data){
-
-	// 			val = this.options.data[categ];
-
-	// 			var slice_angle = 2 * Math.PI * val / total_value;
-
-
-
-	// 			drawPieSlice(
-
-	// 				this.ctx,
-
-	// 				this.canvas.width/2,
-
-	// 				this.canvas.height/2,
-
-	// 				Math.min(this.canvas.width/2,this.canvas.height/2),
-
-	// 				start_angle,
-
-	// 				start_angle+slice_angle,
-
-	// 				this.colors[color_index%this.colors.length]
-
-	// 				);
-
-
-
-	// 			start_angle += slice_angle;
-
-	// 			color_index++;
-
-	// 		}
-
-
-
-	// 	}
-
-	// }
-
-	// var myPiechart = new Piechart(
-
-	// {
-
-	// 	canvas:myCanvas,
-
-	// 	data:myVinyls,
-
-	// 	colors:["#fde23e","#f16e23", "#57d9ff","#937e88"]
-
-	// }
-
-	// );
-
-	// myPiechart.draw();
+	};
+	var myPieChart= new PieChart();
+	myPieChart.draw();
+	myPieChart.drawTitle();
+	myPieChart.drawLine();
 
 });
+	
+
