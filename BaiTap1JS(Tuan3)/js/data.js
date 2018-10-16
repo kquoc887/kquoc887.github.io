@@ -1,16 +1,16 @@
-var data = [
-	"0.8",
-	"0.2"
-]
-
-var color = [
-	"#456aa4",
-	"#009ed5",
-	"#e4322b",
-	"#d02721"
-]
-
-var text = [
-	"Đã Đạt",
-	"Chưa Đạt"
-]
+var data = {
+	"success": 0.8,
+	"fail": 0.2
+}
+var colors = {
+	"colorSuccessTop": "#009ed5",
+	"colorSuccessBot": "#456aa4",
+	"colorFailTop": "#e4322b",
+	"colorFailBot": "#d7312a",
+	"colorLineSuccess": "#426aa5",
+	"colorLineFail": "#f67171"
+}
+var texts = {
+	"textSucess":"Đã Đạt",
+	"textFail": "Chưa Đạt"
+}
