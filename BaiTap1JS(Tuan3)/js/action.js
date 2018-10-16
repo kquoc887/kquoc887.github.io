@@ -9,8 +9,19 @@ $(document).ready(function() {
 		this.xscale = 1;
 		this.yscale =0.4;
 
+		/**
+		 * drawSlicePieSuccess : draw slice pie success
+		 * input:
+		 * ctx: reference to drawing context
+		 * centerX: coordinates X of the start point on Ox
+		 * centerY: coordinates  Y of the start point on Oy
+		 * radius: radius of circle
+		 * startAngle: start angle when a start of the start of section
+		 * endAngle:corner ends where a section of end of end
+		 * i: center deviation
+		 * output: slice pie success.
+		 */
 		this.drawSlicePieSuccess = function(ctx, centerX, centerY, radius, startAngle, endAngle, i) {
-			// console.log(this.xscale, this.yscale);
 			ctx.save();
 			ctx.scale(this.xscale,this.yscale);
 			ctx.beginPath();
@@ -24,7 +35,7 @@ $(document).ready(function() {
 			}
 			ctx.fill();	
 		}
-
+		 /** draw slice pie fail */
 		this.drawSlicePieFail = function(ctx, centerX, centerY, radius, startAngle, endAngle,i) {
 			ctx.save();
 			ctx.scale(this.xscale, this.yscale);
@@ -49,39 +60,47 @@ $(document).ready(function() {
 			ctx.fill();
 		};
 
+		/** draw Title of chart */
 		this.drawTitle = function() {
 			this.ctx.font = "20px Arial";
 			this.ctx.fillStyle="#5bc1e3";
 			this.ctx.fillText("Biểu đồ tổng quan khung năng lực",300,350);
 		};
 
+		/** draw letters on  success line or fail line.
+		 * input: 
+		 * data: data of succes of fail.
+		 * content: value of texts in file data.js
+		 * x,y : position draw.
+		 */
 		this.drawText = function(data,content,x,y) {
 			this.ctx.font = "20px Arial";
 			this.ctx.fillStyle ="gray";
 			this.ctx.fillText(data * 100 + "%" + content,x,y);
 		};
 
+		/** draw success line */
 		this.drawLineSuccess = function() {
 			this.ctx.beginPath();
 			this.ctx.strokeStyle = colors.colorLineSuccess;
-			let labelX = this.x +(this.radius * Math.cos(Math.PI* data.success));
-			let labelY =this.y+ (this.radius * Math.sin(Math.PI * data.success));
-			let middleX = (this.x + labelX)/2;
-			let middleY = ((this.y  + labelY)/2) * this.yscale;
+			let endX = this.x +(this.radius * Math.cos(Math.PI* data.success)); 
+			let endY =this.y+ (this.radius * Math.sin(Math.PI * data.success));
+			let middleX = (this.x + endX)/2; 
+			let middleY = ((this.y  + endY)/2) * this.yscale;
 			this.ctx.moveTo(100,100);
 			this.ctx.lineTo(300,100);
 			this.drawText(data.success,texts.textSucess,90,80);
 			this.ctx.lineTo(middleX,middleY);
 			this.ctx.stroke();
-			// console.log(labelX + "" + labelY);
 		};
 
+		/** draw fail line */
 		this.drawLineFail = function() {
 			this.ctx.beginPath();
-			let labelX = this.x +(this.radius * Math.cos(2*Math.PI-(Math.PI* data.fail)));
-			let labelY =this.y+ (this.radius * Math.sin(2*Math.PI -(Math.PI* data.fail)));
-			let middleX = (this.x + labelX)/2;
-			let middleY = ((this.y  + labelY)/2) * this.yscale;
+			let endX = this.x +(this.radius * Math.cos(2*Math.PI-(Math.PI* data.fail)));
+			let endY =this.y+ (this.radius * Math.sin(2*Math.PI -(Math.PI* data.fail)));
+			let middleX = (this.x + endX)/2;
+			let middleY = ((this.y  + endY)/2) * this.yscale;
 			this.ctx.moveTo(700,70);
 			this.ctx.lineTo(600,70);
 			this.drawText(data.fail,texts.textFail,600,50);
@@ -90,7 +109,8 @@ $(document).ready(function() {
 			this.ctx.stroke();
 		};
 
-		this.draw = function() {
+		/** draw pie chart */
+		this.drawChart = function() {
 			if((data.success + data.fail) > 1 || (data.success + data.fail) < 1) {
 				alert("Total of success and fail to be greater than 1 and not smaller than 1");
 				return;
@@ -113,7 +133,7 @@ $(document).ready(function() {
 		};
 	};
 	var myPieChart= new PieChart();
-	myPieChart.draw();
+	myPieChart.drawChart();
 });
 	
 
