@@ -21,7 +21,7 @@ $(document).ready(function() {
 			ctx.fillRect(10,10,45,25);
 			for (var i = 0; i < arr_text.length; i++) {
 				ctx.fillStyle = "Black";
-				ctx.fillText(arr[i],10,distance)
+				ctx.fillText(arr_text[i],10,distance)
 				distance+=30;
 			}
 			ctx.restore();
