@@ -84,6 +84,12 @@ $(document).ready(function() {
 		
 		/** draw column chart */
 		this.drawChart = function() {
+			for (var i = 0; i < valueOfColumn.length; i++) {
+				if(valueOfColumn[i].value <0) {
+					alert("data is not smaller than 0");
+					return 0;
+				}
+			}
 			if(valueOfColumn.length > 5) {
 				alert("tổng cột không lớn hơn 5");
 				return;
