@@ -3,50 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Bài tập 2 JS (Tuần 3)</title>
-	<link href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script src="jquery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+
+	<input class="birthday" type="text" >
 	<form id="calender">
-	<table border="1px" style="border-collapse: collapse;">
-		<tr>
-			<th><img src="images/pic_prev_02.png" style="display: block"></th>
-			<th><img src="images/pic_prev1.png" style="display: block"></th>
-			<th colspan="2">
-				<select id="month">
-				</select>
-			</th>
-			<th>
-				<select id="year">
-				</select>
-			</th>
-			<th><img src="images/pic_next1.png" style="display: block"></th>
-			<th><img src="images/pic_next2.png" style="display: block"></th>
-		</tr>
-		<tr>
-			<td colspan="7">
-				<table border="1px">
-					<th>Sun</th>
-					<th>Mon</th>
-					<th>Tue</th>
-					<th>Web</th>
-					<th>Thu</th>
-					<th>Fri</th>
-					<th>Sat</th>
+		<table id="table1">
+			<tr>
+				<th>
+					<input class="btn-prev-year btn-prev-year-js" type="button">
+				</th>
+				<th>
+					<input class="btn-prev-month btn-prev-month-js" type="button">
+				</th>
+				<th colspan="2">
+					<select id="month">
+					</select>
+				</th>
+				<th>
+					<select id="year">
+					</select>
+				</th>
+				<th>
+					<input class="btn-next-moth btn-next-month-js" type="button">
+				</th>
+				<th>
+					<input class="btn-next-year btn-next-year-js" type="button">
+				</th>
+			</tr>
+			<tr>
+				<table id="table2">
+					<tr>
+						<th>Sun</th>
+						<th>Mon</th>
+						<th>Tue</th>
+						<th>Web</th>
+						<th>Thu</th>
+						<th>Fri</th>
+						<th>Sat</th>
+					</tr>
 				</table>
-			</td>
-			<!-- <td>Sun</td>
-			<td>Mon</td>
-			<td>Tue</td>
-			<td>Web</td>
-			<td>Thu</td>
-			<td>Fri</td>
-			<td>Sat</td> -->
-		</tr>
-	</table>
-</form>
+			</tr>
+		</table>
+
+	</form>
 	<script src="js/action.js"></script>
 </body>
 </html>
-
-\
