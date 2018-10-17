@@ -36,6 +36,7 @@ $(document).ready(function() {
 			ctx.fill();	
 		}
 		 /** draw slice pie fail */
+
 		this.drawSlicePieFail = function(ctx, centerX, centerY, radius, startAngle, endAngle,i) {
 			ctx.save();
 			ctx.scale(this.xscale, this.yscale);
@@ -62,9 +63,9 @@ $(document).ready(function() {
 
 		/** draw Title of chart */
 		this.drawTitle = function() {
-			this.ctx.font = "20px Arial";
-			this.ctx.fillStyle="#5bc1e3";
-			this.ctx.fillText("Biểu đồ tổng quan khung năng lực",300,350);
+			this.ctx.font = fonts.fontArial;
+			this.ctx.fillStyle = colors.colorTextTitle;
+			this.ctx.fillText(texts.textTitle,300,350);
 		};
 
 		/** draw letters on  success line or fail line.
@@ -74,14 +75,14 @@ $(document).ready(function() {
 		 * x,y : position draw.
 		 */
 		this.drawText = function(data,content,x,y) {
-			this.ctx.font = "20px Arial";
-			this.ctx.fillStyle ="gray";
+			this.ctx.fillStyle =colors.colorTextLine;
 			this.ctx.fillText(data * 100 + "%" + content,x,y);
 		};
 
 		/** draw success line */
 		this.drawLineSuccess = function() {
 			this.ctx.beginPath();
+			this.ctx.lineWidth = 5;
 			this.ctx.strokeStyle = colors.colorLineSuccess;
 			let endX = this.x +(this.radius * Math.cos(Math.PI* data.success)); 
 			let endY =this.y+ (this.radius * Math.sin(Math.PI * data.success));
@@ -97,6 +98,8 @@ $(document).ready(function() {
 		/** draw fail line */
 		this.drawLineFail = function() {
 			this.ctx.beginPath();
+			this.ctx.lineWidth = 5;
+			this.ctx.strokeStyle = colors.colorLineFail;
 			let endX = this.x +(this.radius * Math.cos(2*Math.PI-(Math.PI* data.fail)));
 			let endY =this.y+ (this.radius * Math.sin(2*Math.PI -(Math.PI* data.fail)));
 			let middleX = (this.x + endX)/2;
@@ -105,8 +108,19 @@ $(document).ready(function() {
 			this.ctx.lineTo(600,70);
 			this.drawText(data.fail,texts.textFail,600,50);
 			this.ctx.lineTo(middleX,middleY);
-			this.ctx.strokeStyle = colors.colorLineFail;
 			this.ctx.stroke();
+		};
+
+		this.drawLine = function() {
+			if (data.success == 1 ) {
+				this.drawLineSuccess();
+			} else if (data.fail == 1) {
+				this.drawLineFail();
+			}
+			else {
+				this.drawLineSuccess();
+				this.drawLineFail();
+			}
 		};
 
 		/** draw pie chart */
@@ -119,17 +133,15 @@ $(document).ready(function() {
 			for (var i = 100; i >0; i--) {
 				if(data.success ==1) {
 					this.drawSlicePieSuccess(this.ctx, this.x, this.y, this.radius, 0, 2* Math.PI * data.success, i);
-					this.drawLineSuccess();
+					
 				} else if (data.success == 0) {
 					this.drawSlicePieFail(this.ctx, this.x, this.y, this.radius,2*Math.PI- 2*Math.PI*data.success, 0, i);
-					this.drawLineFail();
 				} else {
 					this.drawSlicePieSuccess(this.ctx, this.x, this.y, this.radius, 0, 2* Math.PI * data.success, i);
 					this.drawSlicePieFail(this.ctx, this.x, this.y, this.radius, 2*Math.PI*data.success, 0, i);
-					this.drawLineSuccess();
-					this.drawLineFail();
 				}
 			}
+			this.drawLine();
 		};
 	};
 	var myPieChart= new PieChart();

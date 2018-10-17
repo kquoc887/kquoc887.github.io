@@ -20,3 +20,16 @@ var valueOfColumn = [
 	{name: "F", value: "4"}
 
 ];
+
+var colors = {
+	"colorDrawLineFirst": "#080808",
+	"colorDrawLine": "#e5e3e3",
+	"colorTextGray": "#9c9c9c",
+	"colorRect": "#3366cc",
+	"colorTextBlack": "#000000"
+}
+
+var fonts = {
+	"fontTitle": "30px Arial",
+	"fontNodeTextLevel": "italic 40px Arial" 
+};

@@ -7,31 +7,44 @@
 	<script src="jquery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+	<form id="calender">
 	<table border="1px" style="border-collapse: collapse;">
 		<tr>
 			<th><img src="images/pic_prev_02.png" style="display: block"></th>
 			<th><img src="images/pic_prev1.png" style="display: block"></th>
 			<th colspan="2">
-				<select class="month">
+				<select id="month">
 				</select>
 			</th>
-				<th >
-				<select class="year">
+			<th>
+				<select id="year">
 				</select>
 			</th>
 			<th><img src="images/pic_next1.png" style="display: block"></th>
 			<th><img src="images/pic_next2.png" style="display: block"></th>
 		</tr>
 		<tr>
-			<td>Sun</td>
+			<td colspan="7">
+				<table border="1px">
+					<th>Sun</th>
+					<th>Mon</th>
+					<th>Tue</th>
+					<th>Web</th>
+					<th>Thu</th>
+					<th>Fri</th>
+					<th>Sat</th>
+				</table>
+			</td>
+			<!-- <td>Sun</td>
 			<td>Mon</td>
 			<td>Tue</td>
 			<td>Web</td>
 			<td>Thu</td>
 			<td>Fri</td>
-			<td>Sat</td>
+			<td>Sat</td> -->
 		</tr>
 	</table>
+</form>
 	<script src="js/action.js"></script>
 </body>
 </html>

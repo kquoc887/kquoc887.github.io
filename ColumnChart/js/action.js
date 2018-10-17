@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 		/** draw title of column chart */
 		this.drawTitle = function() {
-			ctx.font = "30px Arial";
+			ctx.font = fonts.fontTitle;
 			ctx.fillText(texts.textTitle,220,50);
 		};
 
@@ -17,10 +17,10 @@ $(document).ready(function() {
 			let distance =60;
 			ctx.save();
 			ctx.translate(this.xStart+valueOfColumn.length*100,90);
-			ctx.fillStyle="#3366cc";
+			ctx.fillStyle=colors.colorRect;
 			ctx.fillRect(10,10,45,25);
 			for (var i = 0; i < arr_text.length; i++) {
-				ctx.fillStyle = "Black";
+				ctx.fillStyle = colors.colorTextBlack;
 				ctx.fillText(arr_text[i],10,distance)
 				distance+=30;
 			}
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 		/** draw name of chart */
 		this.drawNameChart = function() {
-			ctx.fillStyle = "#9c9c9c";
+			ctx.fillStyle = colors.colorTextGray;
 			ctx.fillText(texts.textName,450,570);
 		};
 
@@ -37,9 +37,9 @@ $(document).ready(function() {
 		this.drawText = function() {
 			ctx.save();
 			ctx.translate(100,500);
-			ctx.font = "italic 40px Arial"; 
+			ctx.font = fonts.fontNodeTextLevel; 
 			ctx.rotate(-Math.PI/2);
-			ctx.fillStyle ="#9c9c9c";
+			ctx.fillStyle = colors.colorTextGray;
 			ctx.fillText(texts.textLevelofCatpion,0,30);
 			ctx.restore();
 			this.drawTitle();
@@ -54,12 +54,11 @@ $(document).ready(function() {
 			let xEnd =750;
 			let yEnd = 500;
 			let distance = 100;
-			ctx.fillStyle = "black";
 			for (var i = 0; i < level.length; i++) {
 				if (i == 0) {
-					ctx.strokeStyle = "black";
+					ctx.strokeStyle = colors.colorDrawLineFirst;
 				} else {
-					ctx.strokeStyle = "#e5e3e3";
+					ctx.strokeStyle = colors.colorDrawLine;
 				}
 				ctx.beginPath();
 				ctx.moveTo(this.xStart,yStart);
@@ -74,9 +73,9 @@ $(document).ready(function() {
 		this.drawColumn = function() {
 			let yStart = 500;
 			for (var i = 0; i < valueOfColumn.length; i++) {
-				ctx.fillStyle = "#3366cc";
+				ctx.fillStyle = colors.colorRect;
 				ctx.fillRect(this.xStart,yStart-(valueOfColumn[i].value*100),75,valueOfColumn[i].value*100);
-				ctx.fillStyle = "black";
+				ctx.fillStyle = colors.colorTextBlack;
 				ctx.fillText(valueOfColumn[i].name,this.xStart+25,yStart+30);
 				this.xStart += 100;
 			}
