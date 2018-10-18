@@ -2,23 +2,33 @@ $(document).ready(function() {
 	var d = new Date();
 	var year=0;
 	var month=0;
+	var username = document.forms["frmInfo"]["UserName"];
+	var passwork = document.forms["frmInfo"]["Passwork"];
+	var email = document.forms["frmInfo"]["Email"];
+	var birthday = document.forms["frmInfo"]["birthday"];
+	var messageUser = document.getElementById("messageUser");
+	var messagePass = document.getElementById("messagePass");
+	var messageEmail = document.getElementById("messageEmail");
+	var messageBirthday = document.getElementById("messageBirthday");
+
 	/** create list year on calender */
-	function create_list_year() {
+	function createListYear() {
 		var k=0;
 		for (i=d.getFullYear()-50; i<=d.getFullYear()+50 ; i++) {
-			document.forms["calender"].year.options[k] = new Option(i,i);
+			document.forms["frmInfo"].year.options[k] = new Option(i,i);
 			k++;
 		}
-		year = document.forms["calender"].year.value = 2018;
+		year = document.forms["frmInfo"].year.value = d.getFullYear();
 	}
+
 	/** create list month on calender */
-	function craete_list_month() {
+	function createListMonth() {
 		var arrMonth =["January", "February", "March", "April", "May", 
 		"June", "July", "August", "September", "October", "November", "December"];
 		for (var i = 0; i < arrMonth.length; i++) {
-			document.forms["calender"].month.options[i]= new Option(arrMonth[i],i+1);
+			document.forms["frmInfo"].month.options[i]= new Option(arrMonth[i],i+1);
 		}
-		month = document.forms["calender"].month.value = 9;
+		month = document.forms["frmInfo"].month.value = d.getMonth()+1;
 	}
 
 	/**
@@ -44,49 +54,62 @@ $(document).ready(function() {
 	}
 
 	/** delete calender old for update calender new */
-	function delete_calender_old() {
-		if (table2.rows.length > 0 ) {
-			for (var i = table2.rows.length-1; i >= 1; i--) {
-				table2.deleteRow(i);
+	function deleteCalenderOld() {
+		if (calender__content.rows.length > 0 ) {
+			for (var i = calender__content.rows.length-1; i >= 1; i--) {
+				calender__content.deleteRow(i);
 			}
 		}
 	}
 
 	/**
-	 * [print_days: print day inside cell of table2
-	 * input:
+	 * printDays: print day inside cell of table2
+	 * input: 
 	 * day is day first of month
+	 * output:
+	 * print day inside cell of table2
 	 */
-	function print_days(day) {
-		// var dd = new Date();
-		// Tinh vị trí khi in
+	function printDays(day) {
 		var start =2;
 		var position = day.getDay();
 		var startDay = 1;
 		var songay = days(day.getFullYear(),day.getMonth()+1)
+		$("#calender__content tr:nth-child("+start+") td:nth-child(-n+"+position+")").css("background-color","#d7dbdd");
 		for ( var i = 0; i <songay ;i++) {
 			position ++;
-			if(i+1 == d.getDate() && year == d.getFullYear() && month == d.getMonth()) {
-				$("#table2 tr:nth-child("+start+") td:nth-child("+position+")").css("background-color","#00ace6");
-				$("#table2 tr:nth-child("+start+") td:nth-child("+position+")").append(i+1);
+			if (i+1 == d.getDate() && year == d.getFullYear() && month == d.getMonth() + 1) {
+				$("#calender__content tr:nth-child("+start+") td:nth-child("+position+")").css("background-color","#00ace6");
+				$("#calender__content tr:nth-child("+start+") td:nth-child("+position+")").append(i+1);
 			} else {
-				$("#table2 tr:nth-child("+start+") td:nth-child("+position+")").append(i+1);
+				$("#calender__content tr:nth-child("+start+") td:nth-child("+position+")").append(i+1);
 			}
-			
 			if (position > 6) {
 				position=0;
 				start += 1;
 			}
 		}
+		position++;
+		$("#calender__content tr:nth-child("+start+") td:nth-child(n+"+position+")").css("background-color","#d7dbdd");
+		// postion = 0;
+		for (var j = start+1; j<= calender__content.rows.length; j++) {
+			position=0;
+			$("#calender__content tr:nth-child("+j+") td:nth-child(n+"+position+")").css("background-color","#d7dbdd");
+		}
+
 		
 	}
 
-	/** create rows and cells in table2 */
-	function print_calender(year, month) {
+	/** 
+	 * print_calender
+	 * @param  {[type]} year  [description]
+	 * @param  {[type]} month [description]
+	 * @return {[type]}       [description]
+	 */
+	function printCalender(year, month) {
 		var day = new Date(year, month -1, 1);
-		delete_calender_old();
+		deleteCalenderOld();
 		for (var i = 7; i <= 49; i+=7) {
-			var table_temp = document.getElementById('table2');
+			var table_temp = document.getElementById('calender__content');
 			var row = table_temp.insertRow(i/7); // add new row in table_temp
 			for (var j = 0; j < 7; j++) {
 				var cell = row.insertCell(j);
@@ -94,35 +117,35 @@ $(document).ready(function() {
 				cell.height= 25
 			}
 		}
-		print_days(day);
+		printDays(day);
 	}
 
-	/** create calender */
+	/** create calender  */
 	function init() {
-		create_list_year();
-		craete_list_month();
-		print_calender(year,month);
-		var arr_tr = $("#table2 tr");
-
+		createListYear();
+		createListMonth();
+		printCalender(year,month);
 	}
 	init();
 
+	/** event when user change month on select month */
 	$("#month").change(function() {
 		month = $(this).val();
-		print_calender(year,month);
+		printCalender(year,month);
 	
 	});
 
+	/** event when user change year on select year */
 	$("#year").change(function() {
 		year = $(this).val();
-		print_calender(year,month);
+		printCalender(year,month);
 	});
 
 	$(".btn-prev-year-js").click(function() {
 		if(year > d.getFullYear()-50) {
 			year =$("#year").val()-1;
 			$("#year").val(year);
-		 	print_calender(year,month);
+		 	printCalender(year,month);
 		}
 	});
 
@@ -131,7 +154,7 @@ $(document).ready(function() {
 			year =parseInt($("#year").val())+1	;
 		// console.log(year+1);
 		 	$("#year").val(year);
-			 print_calender(year,month);
+			 printCalender(year,month);
 		}
 	});
 
@@ -139,7 +162,7 @@ $(document).ready(function() {
 		if (month > 1) {
 			month=$("#month").val()-1
 			$("#month").val(month);
-			print_calender(year,month);
+			printCalender(year,month);
 		}
 
 	});
@@ -147,18 +170,87 @@ $(document).ready(function() {
 		if( month <12) {
 			month=parseInt($("#month").val())+1;
 			$("#month").val(month);
-			print_calender(year,month);
+			printCalender(year,month);
 		}
 
 	});
 
-	$(".birthday").click(function() {
-		$("#calender").css("display","block");
+	/** event when user click on "input birthday" for show calender */
+	$(".js-frm__birthday").click(function() {
+		$(".js-calender").css("display","block");
 	});
 
-	$(document).on("click","#table2 tr td",function(){
+	/** event when user select day in calender */
+	$(document).on("click","#calender__content tr td",function(){
 		var dateSeleted= $(this).text();
-		$(".birthday").val(dateSeleted+"/"+month+"/"+year );
-		$("#calender").css("display","none");
+		messageBirthday.innerText = "";
+		if (dateSeleted > d.getDate() || month > d.getMonth()+1 || year > d.getFullYear()) {
+			messageBirthday.innerText = "Birthday is not smaller than date current";
+			return false;
+		}
+		$(".js-frm__birthday").val(dateSeleted+"/"+month+"/"+year );
+		$(".js-calender").css("display","none");
 	});
+
+	/**
+	 * handle when user enter data at "input username" 
+	 */
+	username.onblur = function () {
+		if(username.value == 0 ) {
+			username.style.border = "3px solid #b4eecc";
+			messageUser.innerText =  "Please Enter Username";
+		} else if (username.value.length <8) {
+			username.style.border = "1px solid #b4eecc";
+			messageUser.innerText =  "Username Length min 8 letter";
+		} else {
+			messageUser.innerText = "";
+		}
+	}
+
+	 /**
+	  * handle when user enter data at "input password"
+	  */
+	passwork.onblur = function() {
+		if(passwork.value == 0 ) {
+			passwork.style.border = "3px solid #b4eecc";
+			messagePass.innerText =  "Please Enter Passwork";
+		} else if (passwork.value.length <8) {
+			passwork.style.border = "3px solid #b4eecc";
+			messagePass.innerText =  "Passwork Length min 8 letter";
+		} else {
+			messagePass.innerText = "";
+		}
+	}
+
+	/** 
+	 * handle when user enter data at "input email"
+	 */
+	email.onblur = function () {
+		var regular = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if (email.value.length == 0) {
+			email.style.border = "3px solid #b4eecc";
+			messageEmail.innerText = "Please Enter Passwork";
+		} else {
+			if (email.value.match(regular)) {
+				email.style.border = "3px solid #b4eecc";
+				messageEmail.innerText = "";
+			} else {
+				messageEmail.innerText = "Email wrong format";
+			}
+		}
+	}
+	
+	/** event when user click button submit. 
+	 * If user leave empty  error report at cells input.
+	*/
+	$(".js-btn-submit").click(function() {
+		if(username.value == "" || passwork.value == "" || email.value == ""  || birthday.value == "") {
+			messageUser.innerText =  "Please Enter Username";
+			messagePass.innerText =  "Please Enter Passwork";
+			messageEmail.innerText = "Please Enter Passwork";
+			messageBirthday.innerText = "Please Enter Birthday";
+			return false;
+		}
+	});
+
 });

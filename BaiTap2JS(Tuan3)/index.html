@@ -7,48 +7,82 @@
 	<script src="jquery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-
-	<input class="birthday" type="text" >
-	<form id="calender">
-		<table id="table1">
+	<form  name="frmInfo" action="trangchu.php" >
+		<table class="frm">
 			<tr>
-				<th>
-					<input class="btn-prev-year btn-prev-year-js" type="button">
-				</th>
-				<th>
-					<input class="btn-prev-month btn-prev-month-js" type="button">
-				</th>
-				<th colspan="2">
-					<select id="month">
-					</select>
-				</th>
-				<th>
-					<select id="year">
-					</select>
-				</th>
-				<th>
-					<input class="btn-next-moth btn-next-month-js" type="button">
-				</th>
-				<th>
-					<input class="btn-next-year btn-next-year-js" type="button">
-				</th>
+				<td>Username:</td>
+				<td><input class="frm__input" name="UserName" type="text"></td>
+				<td><p class="message" id="messageUser"></p></td>
 			</tr>
 			<tr>
-				<table id="table2">
-					<tr>
-						<th>Sun</th>
-						<th>Mon</th>
-						<th>Tue</th>
-						<th>Web</th>
-						<th>Thu</th>
-						<th>Fri</th>
-						<th>Sat</th>
-					</tr>
-				</table>
+				<td>Passwork:</td>
+				<td><input class="frm__input" name="Passwork" type="password"></td>
+				<td><p class="message" id="messagePass"></p></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input class="frm__input" name="Email" type="text"></td>
+				<td><p class="message" id="messageEmail"></p></td>
+			</tr>
+			<tr>
+				<td>Birthday:</td>
+				<td>
+					<input class="frm__input frm__birthday js-frm__birthday" name="birthday" type="text">
+					<div class="calender js-calender">
+						<table class="calender__header">
+							<tr>
+								<th>
+									<input class="btn-prev-year btn-prev-year-js" type="button">
+								</th>
+								<th>
+									<input class="btn-prev-month btn-prev-month-js" type="button">
+								</th>
+								<th colspan="2">
+									<select id="month">
+									</select>
+								</th>
+								<th>
+									<select id="year">
+									</select>
+								</th>
+								<th>
+									<input class="btn-next-moth btn-next-month-js" type="button">
+								</th>
+								<th>
+									<input class="btn-next-year btn-next-year-js" type="button">
+								</th>
+							</tr>
+							<tr>
+								<td colspan="7">
+									<table class="calender__content" id="calender__content">
+										<tr>	
+											<th>Sun</th>
+											<th>Mon</th>
+											<th>Tue</th>
+											<th>Web</th>
+											<th>Thu</th>
+											<th>Fri</th>
+											<th>Sat</th>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td>
+					<p class="message" id="messageBirthday" name="birthday"></p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input class="btn btn-submit js-btn-submit" name="submit" type="submit" >
+					<input class="btn btn-reset" name="reset" type="reset">	
+				</td>
 			</tr>
 		</table>
-
 	</form>
+
 	<script src="js/action.js"></script>
 </body>
 </html>

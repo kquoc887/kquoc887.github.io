@@ -40,7 +40,7 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	width: 360px;
 }
 
@@ -52,18 +52,19 @@ table th {
 img {
 	display: inline-block;
 }
-#calender {
+.calender {
 	display: none;
 }
-#table1 tr th {
+.calender__header tr th {
 	background-color: #a9cce3; 
 }
 
-#table2 tr td {
+.calender__content tr td {
 	border: 1px solid black;
+	width: 0px;
 }
 
-#table2 tr:nth-child(1) th {
+.calender__content tr:nth-child(1) th {
 	color: #7b2481;
 	background-color: #3498db;
 }
@@ -96,9 +97,42 @@ img {
 }
 
 
-.birthday {
+.frm__birthday {
 	background-image: url("../images/pic_icon_calenter.png");
 	background-repeat: no-repeat;
 	background-position: right;
-	height: 20px;
+	/*height: 20px;*/
+	/*vertical-align: middle;*/
+}
+
+
+.frm__input {
+	width: 200px;
+	margin-top: 11px;
+}
+
+.frmInfo__Info tr td:nth-child(1) {
+	text-align: center;
+	font-size: 15px;
+	width: 200px;
+
+}
+
+.message {
+	width: 200px;
+	color: red;
+}
+
+.table1.table2{width: 100px;}
+
+.btn {
+	background-color: #2471a3;
+	width: 64px;
+	height: 33px;
+	color: #ffffff;
+	margin-top: 10px;
+}
+
+.btn-submit {
+	margin-left: 70px;
 }
