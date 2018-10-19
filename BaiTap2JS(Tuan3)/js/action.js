@@ -10,7 +10,6 @@ $(document).ready(function() {
 	var messagePass = document.getElementById("messagePass");
 	var messageEmail = document.getElementById("messageEmail");
 	var messageBirthday = document.getElementById("messageBirthday");
-
 	/** create list year on calender */
 	function createListYear() {
 		var k=0;
@@ -152,7 +151,6 @@ $(document).ready(function() {
 	$(".btn-next-year-js").click(function() {
 		if (year < d.getFullYear()+50) {
 			year =parseInt($("#year").val())+1	;
-		// console.log(year+1);
 		 	$("#year").val(year);
 			 printCalender(year,month);
 		}
@@ -167,7 +165,7 @@ $(document).ready(function() {
 
 	});
 	$(".btn-next-month-js").click(function() {
-		if( month <12) {
+		if (month <12) {
 			month=parseInt($("#month").val())+1;
 			$("#month").val(month);
 			printCalender(year,month);
@@ -192,65 +190,66 @@ $(document).ready(function() {
 		$(".js-calender").css("display","none");
 	});
 
+	/** check validate of username, passwork, email
+     * input : object can be username,passwork, email
+     * outpit: report the object of errors.
+	 */
+	function checkValidateObject(object) {
+		object.style.border = "1px solid #b4eecc";
+		if ($(object).parents("tr").find("td:nth-child(3)").length !=0) {
+			$(object).parents("tr").find("td:nth-child(3)").remove();
+		}
+		if (object.value.length == 0 ) {
+				$(object).parents("tr").append("<td  style='color:red'>Please Enter "+object.name+"</td>");
+		} else {
+			if (object.value.length == 0 ) {
+				$(object).parents("tr").append("<td  style='color:red'>Please Enter "+object.name+"</td>");
+			} else {
+				if (object.name == "Email") {
+					$(object).parents("tr").append("<td  style='color:red'>"+object.name+" wrong format</td>");
+				} else if (object.value.length < 8) {
+					$(object).parents("tr").append("<td  style='color:red'>"+object.name+" length min 8 letter</td>");
+				}
+			}
+
+		}
+	}
 	/**
 	 * handle when user enter data at "input username" 
 	 */
-	username.onblur = function () {
-		if(username.value == 0 ) {
-			username.style.border = "3px solid #b4eecc";
-			messageUser.innerText =  "Please Enter Username";
-		} else if (username.value.length <8) {
-			username.style.border = "1px solid #b4eecc";
-			messageUser.innerText =  "Username Length min 8 letter";
-		} else {
-			messageUser.innerText = "";
-		}
-	}
+
+	$(".frm__username").blur(function(){
+		checkValidateObject(username);
+	});
 
 	 /**
 	  * handle when user enter data at "input password"
 	  */
-	passwork.onblur = function() {
-		if(passwork.value == 0 ) {
-			passwork.style.border = "3px solid #b4eecc";
-			messagePass.innerText =  "Please Enter Passwork";
-		} else if (passwork.value.length <8) {
-			passwork.style.border = "3px solid #b4eecc";
-			messagePass.innerText =  "Passwork Length min 8 letter";
-		} else {
-			messagePass.innerText = "";
-		}
-	}
+	 $(".frm__passwork").blur(function() {
+	 	checkValidateObject(passwork);
+	 });
 
 	/** 
 	 * handle when user enter data at "input email"
 	 */
-	email.onblur = function () {
-		var regular = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		if (email.value.length == 0) {
-			email.style.border = "3px solid #b4eecc";
-			messageEmail.innerText = "Please Enter Passwork";
-		} else {
-			if (email.value.match(regular)) {
-				email.style.border = "3px solid #b4eecc";
-				messageEmail.innerText = "";
-			} else {
-				messageEmail.innerText = "Email wrong format";
-			}
-		}
-	}
-	
+	$(".frm__email").blur(function() {
+		checkValidateObject(email);
+	});
+
 	/** event when user click button submit. 
 	 * If user leave empty  error report at cells input.
 	*/
 	$(".js-btn-submit").click(function() {
-		if(username.value == "" || passwork.value == "" || email.value == ""  || birthday.value == "") {
-			messageUser.innerText =  "Please Enter Username";
-			messagePass.innerText =  "Please Enter Passwork";
-			messageEmail.innerText = "Please Enter Passwork";
-			messageBirthday.innerText = "Please Enter Birthday";
-			return false;
+		checkValidateObject(username);
+		checkValidateObject(passwork);
+		checkValidateObject(email);
+		if (birthday.value == "") {
+				messageBirthday.innerText = "Please Enter Birthday";
+		}
+		for (var i = 0 ; i< 3 ; i++ ) {
+			if($(".frm").find('tr').eq(i).children('td').eq(2).length !=0) {
+				return false;
+			}
 		}
 	});
-
 });
