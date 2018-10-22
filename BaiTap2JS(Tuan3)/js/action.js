@@ -236,8 +236,8 @@ $(document).ready(function() {
 		checkValidateObject(email);
 	});
 
-	/** event when user click button submit. 
-	 * If user leave empty  error report at cells input.
+	/** event when user click button submit
+	 * If user leave empty  error report at cells input
 	*/
 	$(".js-btn-submit").click(function() {
 		console.log(Date.parse(birthday.value));
