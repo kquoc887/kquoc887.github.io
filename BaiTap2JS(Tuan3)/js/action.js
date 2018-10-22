@@ -181,12 +181,8 @@ $(document).ready(function() {
 	/** event when user select day in calender */
 	$(document).on("click","#calender__content tr td",function(){
 		var dateSeleted= $(this).text();
-		messageBirthday.innerText = "";
-		if (dateSeleted > d.getDate() || month > d.getMonth()+1 || year > d.getFullYear()) {
-			messageBirthday.innerText = "Birthday is not smaller than date current";
-			return false;
-		}
-		$(".js-frm__birthday").val(dateSeleted+"/"+month+"/"+year );
+		messageBirthday.innerHTML =  "";
+		$(".js-frm__birthday").val(year+"/"+month+"/"+dateSeleted );
 		$(".js-calender").css("display","none");
 	});
 
@@ -206,7 +202,10 @@ $(document).ready(function() {
 				$(object).parents("tr").append("<td  style='color:red'>Please Enter "+object.name+"</td>");
 			} else {
 				if (object.name == "Email") {
-					$(object).parents("tr").append("<td  style='color:red'>"+object.name+" wrong format</td>");
+					var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+					if(re.test(object.value) == false) {
+						$(object).parents("tr").append("<td  style='color:red'>"+object.name+" wrong format</td>");
+					} 
 				} else if (object.value.length < 8) {
 					$(object).parents("tr").append("<td  style='color:red'>"+object.name+" length min 8 letter</td>");
 				}
@@ -214,6 +213,7 @@ $(document).ready(function() {
 
 		}
 	}
+
 	/**
 	 * handle when user enter data at "input username" 
 	 */
@@ -240,11 +240,15 @@ $(document).ready(function() {
 	 * If user leave empty  error report at cells input.
 	*/
 	$(".js-btn-submit").click(function() {
+		console.log(Date.parse(birthday.value));
+		// return false;
 		checkValidateObject(username);
 		checkValidateObject(passwork);
 		checkValidateObject(email);
 		if (birthday.value == "") {
-				messageBirthday.innerText = "Please Enter Birthday";
+			messageBirthday.innerText = "Please Enter Birthday";
+		} else if (Date.parse(birthday.value) > new Date()) {
+			messageBirthday.innerText = "Birthday is not smaller than date current";
 		}
 		for (var i = 0 ; i< 3 ; i++ ) {
 			if($(".frm").find('tr').eq(i).children('td').eq(2).length !=0) {

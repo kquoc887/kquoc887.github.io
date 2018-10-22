@@ -52,6 +52,11 @@ table th {
 img {
 	display: inline-block;
 }
+
+.container {
+	width: 800px;
+	margin: 10px auto;
+}
 .calender {
 	display: none;
 }
@@ -101,6 +106,7 @@ img {
 	background-image: url("../images/pic_icon_calenter.png");
 	background-repeat: no-repeat;
 	background-position: right;
+	background-size: contain;
 	/*height: 20px;*/
 	/*vertical-align: middle;*/
 }

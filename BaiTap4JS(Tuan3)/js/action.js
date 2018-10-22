@@ -17,7 +17,7 @@ $(document).ready(function() {
 	 			delay: valObject.timedelay,
 	 			onComplete: repeatEffect,
 	 			onCompleteParams: [leavesFall]
-	 		}, 0.3);
+	 		});
 	 	}
 	}
 
