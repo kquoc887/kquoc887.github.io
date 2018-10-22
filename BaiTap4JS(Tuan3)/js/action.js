@@ -42,7 +42,7 @@ $(document).ready(function() {
 	}
 
 	/**
-	 * function randomAttributeValues: set value of attribute for leaf in array "listLeaves".
+	 * function randomAttributeValues: set value of attribute for leaf in array "listLeaves"
 	 */
 	function randomAttributeValues() {
 		var attributes = {
