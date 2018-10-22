@@ -56,7 +56,6 @@ $(document).ready(function() {
 		};
 		return attributes;
 	}
-
-	console.log($(".container").width()*Math.random() );
+	
 	effectLeavesFall();
 });
