@@ -5,11 +5,14 @@ public class NameRepository implements Container {
 	@Override
 	public Iterator getIterator() {
 		// TODO Auto-generated method stub
-		return null;
+		return new NameIterator();
 	}
 	
 	private class NameIterator implements Iterator {
-		int index;
+		public int index;
+		public int getIndex() {
+			return index;
+		}
 		@Override
 		public boolean hasNext() {
 			if (index < names.length) {
@@ -17,11 +20,11 @@ public class NameRepository implements Container {
 			}
 			return false;
 		}
-		
 		@Override
 		public Object next() {
 			// TODO Auto-generated method stub
 			if (this.hasNext()) {
+				System.out.println(index);
 				return names[index++];
 			}
 			return null;

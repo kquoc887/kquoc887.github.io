@@ -1,7 +1,7 @@
 package factorypattern;
 
 public class CarFactory {
-	public void viewCar(String carType) {
+	public static void viewCar(String carType) {
 		Car car;
 		if (carType.equalsIgnoreCase("Honda")) {
 			car = new Honda();
